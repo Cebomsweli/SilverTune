@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace SilverTune
 {
-    public partial class Form1 : Form
+    public partial class Menu : Form
     {
-        public Form1()
+        public Menu()
         {
             InitializeComponent();
         }
 
-        private void bOOKINGToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cLIENTSToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Menu_Load(object sender, EventArgs e)
         {
 
         }
