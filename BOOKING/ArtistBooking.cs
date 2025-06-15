@@ -279,6 +279,7 @@ namespace SilverTune.BOOKING
 
     }
 
+        //Prevents booking conflics
         private int CheckBookingConflict(int artistId, DateTime eventDate, TimeSpan eventTime, int duration)
         {
             int conflictCount = 0;
@@ -296,7 +297,7 @@ namespace SilverTune.BOOKING
                     cmd.Parameters.AddWithValue("@NewDuration", duration);
 
                     conn.Open();
-                    object result = cmd.ExecuteScalar();
+                    object result = cmd.ExecuteScalar();   
 
                     if (result != null && int.TryParse(result.ToString(), out int count))
                         conflictCount = count;
@@ -306,7 +307,124 @@ namespace SilverTune.BOOKING
             return conflictCount;
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void locTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            aRTISTTableAdapter.FillByStageName(paseOneDS.ARTIST, textBox2.Text);
+        }
+
+        private void txtTime_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void eventDateTxt_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void durCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void typeTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void typeText_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clieSearchTxt_TextChanged(object sender, EventArgs e)
+        {
+            cLIENTTableAdapter.FillByClientName(paseOneDS.CLIENT, clieSearchTxt.Text);
+        }
     }
 }

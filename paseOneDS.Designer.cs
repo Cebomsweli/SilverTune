@@ -2941,7 +2941,7 @@ SELECT ArtistID, ArtistFirstName, ArtistLastName, ArtistStageName, ArtistEmail, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        ArtistID, ArtistFirstName, ArtistLastName, ArtistStageName, ArtistEmail, ArtistIdentityNo, ArtistPhoneNumber, ArtistGenre, ArtistStreetName, ArtistStreetNumber, ArtistCityName, ArtistCountryName, AristPostalCode, ArtistImage, 
@@ -2949,6 +2949,21 @@ SELECT ArtistID, ArtistFirstName, ArtistLastName, ArtistStageName, ArtistEmail, 
 FROM            ARTIST
 WHERE        (ArtistAvailabilityStatus = 'Verified')";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        ArtistID, ArtistFirstName, ArtistLastName, ArtistStageName, ArtistEmail, ArtistIdentityNo, ArtistPhoneNumber, ArtistGenre, ArtistStreetName, ArtistStreetNumber, ArtistCityName, ArtistCountryName, AristPostalCode, ArtistImage, 
+                         ArtistAvailabilityStatus
+FROM            ARTIST
+WHERE        (ArtistAvailabilityStatus = 'Archived')";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT        ArtistID, ArtistFirstName, ArtistLastName, ArtistStageName, ArtistEmail, ArtistIdentityNo, ArtistPhoneNumber, ArtistGenre, ArtistStreetName, ArtistStreetNumber, ArtistCityName, ArtistCountryName, AristPostalCode, ArtistImage, 
+                         ArtistAvailabilityStatus
+FROM            ARTIST
+WHERE        (ArtistAvailabilityStatus = 'Verified') AND (ArtistStageName LIKE @name + '%')";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "ArtistStageName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2970,6 +2985,66 @@ WHERE        (ArtistAvailabilityStatus = 'Verified')";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual paseOneDS.ARTISTDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            paseOneDS.ARTISTDataTable dataTable = new paseOneDS.ARTISTDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByArchived(paseOneDS.ARTISTDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual paseOneDS.ARTISTDataTable GetDataBy1() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            paseOneDS.ARTISTDataTable dataTable = new paseOneDS.ARTISTDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByStageName(paseOneDS.ARTISTDataTable dataTable, string name) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((name == null)) {
+                throw new global::System.ArgumentNullException("name");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(name));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual paseOneDS.ARTISTDataTable GetDataBy(string name) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((name == null)) {
+                throw new global::System.ArgumentNullException("name");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(name));
+            }
             paseOneDS.ARTISTDataTable dataTable = new paseOneDS.ARTISTDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -4422,13 +4497,20 @@ SELECT ClientID, ClientFirstName, ClientLastName, ClientPhoneNumber, ClientEmail
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        ClientID, ClientFirstName, ClientLastName, ClientPhoneNumber, ClientEmail, ClientStreetName, ClientStreetNumber, ClientCityName, ClientCountryName, ClientPostalCode, ClientStatus
 FROM            CLIENT
 WHERE        (ClientStatus = 'Verified')";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        ClientID, ClientFirstName, ClientLastName, ClientPhoneNumber, ClientEmail, ClientStreetName, ClientStreetNumber, ClientCityName, ClientCountryName, ClientPostalCode, ClientStatus
+FROM            CLIENT
+WHERE        (ClientStatus = 'Verified') AND (ClientFirstName LIKE @name + '%')";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "ClientFirstName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4450,6 +4532,42 @@ WHERE        (ClientStatus = 'Verified')";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual paseOneDS.CLIENTDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            paseOneDS.CLIENTDataTable dataTable = new paseOneDS.CLIENTDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByClientName(paseOneDS.CLIENTDataTable dataTable, string name) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((name == null)) {
+                throw new global::System.ArgumentNullException("name");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(name));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual paseOneDS.CLIENTDataTable GetDataBy(string name) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((name == null)) {
+                throw new global::System.ArgumentNullException("name");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(name));
+            }
             paseOneDS.CLIENTDataTable dataTable = new paseOneDS.CLIENTDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

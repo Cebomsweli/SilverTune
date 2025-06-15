@@ -67,5 +67,24 @@ namespace SilverTune
             FormSetup(homePage);
 
         }
+
+        private void vIEWARTISTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ARTIST.ViewArtist view = new ARTIST.ViewArtist();
+            FormSetup(view);
+
+        }
+
+        private void uPDATEARTISTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ARTIST.UpdateArtist updateArtist = new ARTIST.UpdateArtist();
+            FormSetup(updateArtist);
+        }
+
+        private void aRCHIVEARTISTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ARTIST.ArchiveStatus archiveStatus = new ARTIST.ArchiveStatus();
+            FormSetup(archiveStatus);
+        }
     }
 }

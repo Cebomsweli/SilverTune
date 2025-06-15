@@ -101,6 +101,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ARTIST\ArchiveStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ARTIST\ArchiveStatus.Designer.cs">
+      <DependentUpon>ArchiveStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="ARTIST\RecordArtist.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,17 +119,47 @@
     <Compile Include="ARTIST\RecordCarges.Designer.cs">
       <DependentUpon>RecordCarges.cs</DependentUpon>
     </Compile>
+    <Compile Include="ARTIST\UpdateArtist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ARTIST\UpdateArtist.Designer.cs">
+      <DependentUpon>UpdateArtist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ARTIST\ViewArtist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ARTIST\ViewArtist.Designer.cs">
+      <DependentUpon>ViewArtist.cs</DependentUpon>
+    </Compile>
     <Compile Include="BOOKING\ArtistBooking.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BOOKING\ArtistBooking.Designer.cs">
       <DependentUpon>ArtistBooking.cs</DependentUpon>
     </Compile>
+    <Compile Include="CLIENT\ARchiveClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CLIENT\ARchiveClient.Designer.cs">
+      <DependentUpon>ARchiveClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="CLIENT\RecordClient.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CLIENT\RecordClient.Designer.cs">
       <DependentUpon>RecordClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CLIENT\UpdateClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CLIENT\UpdateClient.Designer.cs">
+      <DependentUpon>UpdateClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CLIENT\ViewClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CLIENT\ViewClient.Designer.cs">
+      <DependentUpon>ViewClient.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -151,17 +187,35 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ARTIST\ArchiveStatus.resx">
+      <DependentUpon>ArchiveStatus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ARTIST\RecordArtist.resx">
       <DependentUpon>RecordArtist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ARTIST\RecordCarges.resx">
       <DependentUpon>RecordCarges.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ARTIST\UpdateArtist.resx">
+      <DependentUpon>UpdateArtist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ARTIST\ViewArtist.resx">
+      <DependentUpon>ViewArtist.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BOOKING\ArtistBooking.resx">
       <DependentUpon>ArtistBooking.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CLIENT\ARchiveClient.resx">
+      <DependentUpon>ARchiveClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CLIENT\RecordClient.resx">
       <DependentUpon>RecordClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CLIENT\UpdateClient.resx">
+      <DependentUpon>UpdateClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CLIENT\ViewClient.resx">
+      <DependentUpon>ViewClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

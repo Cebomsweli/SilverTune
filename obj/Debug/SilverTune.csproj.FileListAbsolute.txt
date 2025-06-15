@@ -51,3 +51,7 @@ C:\Users\221026506\source\repos\SilverTune\bin\Debug\System.Threading.Tasks.Exte
 C:\Users\221026506\source\repos\SilverTune\bin\Debug\System.ValueTuple.xml
 C:\Users\221026506\source\repos\SilverTune\obj\Debug\SilverTune.csproj.CopyComplete
 C:\Users\221026506\source\repos\SilverTune\bin\Debug\appsettings.json
+C:\Users\221026506\source\repos\SilverTune\obj\Debug\SilverTune.csproj.AssemblyReference.cache
+C:\Users\221026506\source\repos\SilverTune\obj\Debug\SilverTune.ARTIST.ViewArtist.resources
+C:\Users\221026506\source\repos\SilverTune\obj\Debug\SilverTune.ARTIST.UpdateArtist.resources
+C:\Users\221026506\source\repos\SilverTune\obj\Debug\SilverTune.ARTIST.ArchiveStatus.resources
