@@ -46,11 +46,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ARTIST\RecordArtist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ARTIST\RecordArtist.Designer.cs">
+      <DependentUpon>RecordArtist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ARTIST\RecordCarges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ARTIST\RecordCarges.Designer.cs">
+      <DependentUpon>RecordCarges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BOOKING\ArtistBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BOOKING\ArtistBooking.Designer.cs">
+      <DependentUpon>ArtistBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CLIENT\RecordClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CLIENT\RecordClient.Designer.cs">
+      <DependentUpon>RecordClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME\HomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME\HomePage.Designer.cs">
+      <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -58,10 +88,30 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="paseOneDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>paseOneDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ARTIST\RecordArtist.resx">
+      <DependentUpon>RecordArtist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ARTIST\RecordCarges.resx">
+      <DependentUpon>RecordCarges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BOOKING\ArtistBooking.resx">
+      <DependentUpon>ArtistBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CLIENT\RecordClient.resx">
+      <DependentUpon>RecordClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME\HomePage.resx">
+      <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -75,6 +125,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="paseOneDS.xsc">
+      <DependentUpon>paseOneDS.xsd</DependentUpon>
+    </None>
+    <None Include="paseOneDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>paseOneDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="paseOneDS.xss">
+      <DependentUpon>paseOneDS.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

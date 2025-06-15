@@ -64,6 +64,11 @@ namespace SilverTune
             imageIndex = (imageIndex + 1) % backgroundImages.Count;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //private void label1_Click(object sender, EventArgs e)
         //{
         //    // Optional: any label click logic
