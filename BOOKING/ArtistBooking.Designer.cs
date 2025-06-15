@@ -38,6 +38,13 @@ namespace SilverTune.BOOKING
             this.label19 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.artistIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artistStageNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artistGenreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artistCountryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artistAvailabilityStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aRTISTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.paseOneDS = new SilverTune.paseOneDS();
             this.label18 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -68,6 +75,13 @@ namespace SilverTune.BOOKING
             this.label23 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientFirstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientLastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientPhoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cLIENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -76,20 +90,6 @@ namespace SilverTune.BOOKING
             this.label11 = new System.Windows.Forms.Label();
             this.clieNameTxt = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.artistIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artistStageNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artistGenreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artistCountryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artistAvailabilityStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aRTISTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.paseOneDS = new SilverTune.paseOneDS();
-            this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientFirstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientLastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientPhoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cLIENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aRTISTTableAdapter = new SilverTune.paseOneDSTableAdapters.ARTISTTableAdapter();
             this.cLIENTTableAdapter = new SilverTune.paseOneDSTableAdapters.CLIENTTableAdapter();
             this.bookingTableAdapter = new SilverTune.paseOneDSTableAdapters.BOOKINGTableAdapter();
@@ -98,11 +98,11 @@ namespace SilverTune.BOOKING
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aRTISTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paseOneDS)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aRTISTBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.paseOneDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,6 +143,7 @@ namespace SilverTune.BOOKING
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Record Booking";
+            
             // 
             // panel2
             // 
@@ -173,7 +174,7 @@ namespace SilverTune.BOOKING
             this.panel2.Controls.Add(this.typeTxt);
             this.panel2.Controls.Add(this.locTxt);
             this.panel2.Controls.Add(this.label17);
-            this.panel2.Location = new System.Drawing.Point(45, 31);
+            this.panel2.Location = new System.Drawing.Point(31, 31);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1335, 349);
             this.panel2.TabIndex = 0;
@@ -220,6 +221,47 @@ namespace SilverTune.BOOKING
             this.dataGridView1.Size = new System.Drawing.Size(923, 76);
             this.dataGridView1.TabIndex = 78;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // artistIDDataGridViewTextBoxColumn
+            // 
+            this.artistIDDataGridViewTextBoxColumn.DataPropertyName = "ArtistID";
+            this.artistIDDataGridViewTextBoxColumn.HeaderText = "ArtistID";
+            this.artistIDDataGridViewTextBoxColumn.Name = "artistIDDataGridViewTextBoxColumn";
+            this.artistIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // artistStageNameDataGridViewTextBoxColumn
+            // 
+            this.artistStageNameDataGridViewTextBoxColumn.DataPropertyName = "ArtistStageName";
+            this.artistStageNameDataGridViewTextBoxColumn.HeaderText = "ArtistStageName";
+            this.artistStageNameDataGridViewTextBoxColumn.Name = "artistStageNameDataGridViewTextBoxColumn";
+            // 
+            // artistGenreDataGridViewTextBoxColumn
+            // 
+            this.artistGenreDataGridViewTextBoxColumn.DataPropertyName = "ArtistGenre";
+            this.artistGenreDataGridViewTextBoxColumn.HeaderText = "ArtistGenre";
+            this.artistGenreDataGridViewTextBoxColumn.Name = "artistGenreDataGridViewTextBoxColumn";
+            // 
+            // artistCountryNameDataGridViewTextBoxColumn
+            // 
+            this.artistCountryNameDataGridViewTextBoxColumn.DataPropertyName = "ArtistCountryName";
+            this.artistCountryNameDataGridViewTextBoxColumn.HeaderText = "ArtistCountryName";
+            this.artistCountryNameDataGridViewTextBoxColumn.Name = "artistCountryNameDataGridViewTextBoxColumn";
+            // 
+            // artistAvailabilityStatusDataGridViewTextBoxColumn
+            // 
+            this.artistAvailabilityStatusDataGridViewTextBoxColumn.DataPropertyName = "ArtistAvailabilityStatus";
+            this.artistAvailabilityStatusDataGridViewTextBoxColumn.HeaderText = "ArtistAvailabilityStatus";
+            this.artistAvailabilityStatusDataGridViewTextBoxColumn.Name = "artistAvailabilityStatusDataGridViewTextBoxColumn";
+            // 
+            // aRTISTBindingSource
+            // 
+            this.aRTISTBindingSource.DataMember = "ARTIST";
+            this.aRTISTBindingSource.DataSource = this.paseOneDS;
+            // 
+            // paseOneDS
+            // 
+            this.paseOneDS.DataSetName = "paseOneDS";
+            this.paseOneDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label18
             // 
@@ -546,6 +588,48 @@ namespace SilverTune.BOOKING
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
+            // clientIDDataGridViewTextBoxColumn
+            // 
+            this.clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
+            this.clientIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clientFirstNameDataGridViewTextBoxColumn
+            // 
+            this.clientFirstNameDataGridViewTextBoxColumn.DataPropertyName = "ClientFirstName";
+            this.clientFirstNameDataGridViewTextBoxColumn.HeaderText = "ClientFirstName";
+            this.clientFirstNameDataGridViewTextBoxColumn.Name = "clientFirstNameDataGridViewTextBoxColumn";
+            // 
+            // clientLastNameDataGridViewTextBoxColumn
+            // 
+            this.clientLastNameDataGridViewTextBoxColumn.DataPropertyName = "ClientLastName";
+            this.clientLastNameDataGridViewTextBoxColumn.HeaderText = "ClientLastName";
+            this.clientLastNameDataGridViewTextBoxColumn.Name = "clientLastNameDataGridViewTextBoxColumn";
+            // 
+            // clientPhoneNumberDataGridViewTextBoxColumn
+            // 
+            this.clientPhoneNumberDataGridViewTextBoxColumn.DataPropertyName = "ClientPhoneNumber";
+            this.clientPhoneNumberDataGridViewTextBoxColumn.HeaderText = "ClientPhoneNumber";
+            this.clientPhoneNumberDataGridViewTextBoxColumn.Name = "clientPhoneNumberDataGridViewTextBoxColumn";
+            // 
+            // clientEmailDataGridViewTextBoxColumn
+            // 
+            this.clientEmailDataGridViewTextBoxColumn.DataPropertyName = "ClientEmail";
+            this.clientEmailDataGridViewTextBoxColumn.HeaderText = "ClientEmail";
+            this.clientEmailDataGridViewTextBoxColumn.Name = "clientEmailDataGridViewTextBoxColumn";
+            // 
+            // clientStatusDataGridViewTextBoxColumn
+            // 
+            this.clientStatusDataGridViewTextBoxColumn.DataPropertyName = "ClientStatus";
+            this.clientStatusDataGridViewTextBoxColumn.HeaderText = "ClientStatus";
+            this.clientStatusDataGridViewTextBoxColumn.Name = "clientStatusDataGridViewTextBoxColumn";
+            // 
+            // cLIENTBindingSource
+            // 
+            this.cLIENTBindingSource.DataMember = "CLIENT";
+            this.cLIENTBindingSource.DataSource = this.paseOneDS;
+            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -615,89 +699,6 @@ namespace SilverTune.BOOKING
             this.label10.Text = "Surname";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
-            // artistIDDataGridViewTextBoxColumn
-            // 
-            this.artistIDDataGridViewTextBoxColumn.DataPropertyName = "ArtistID";
-            this.artistIDDataGridViewTextBoxColumn.HeaderText = "ArtistID";
-            this.artistIDDataGridViewTextBoxColumn.Name = "artistIDDataGridViewTextBoxColumn";
-            this.artistIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // artistStageNameDataGridViewTextBoxColumn
-            // 
-            this.artistStageNameDataGridViewTextBoxColumn.DataPropertyName = "ArtistStageName";
-            this.artistStageNameDataGridViewTextBoxColumn.HeaderText = "ArtistStageName";
-            this.artistStageNameDataGridViewTextBoxColumn.Name = "artistStageNameDataGridViewTextBoxColumn";
-            // 
-            // artistGenreDataGridViewTextBoxColumn
-            // 
-            this.artistGenreDataGridViewTextBoxColumn.DataPropertyName = "ArtistGenre";
-            this.artistGenreDataGridViewTextBoxColumn.HeaderText = "ArtistGenre";
-            this.artistGenreDataGridViewTextBoxColumn.Name = "artistGenreDataGridViewTextBoxColumn";
-            // 
-            // artistCountryNameDataGridViewTextBoxColumn
-            // 
-            this.artistCountryNameDataGridViewTextBoxColumn.DataPropertyName = "ArtistCountryName";
-            this.artistCountryNameDataGridViewTextBoxColumn.HeaderText = "ArtistCountryName";
-            this.artistCountryNameDataGridViewTextBoxColumn.Name = "artistCountryNameDataGridViewTextBoxColumn";
-            // 
-            // artistAvailabilityStatusDataGridViewTextBoxColumn
-            // 
-            this.artistAvailabilityStatusDataGridViewTextBoxColumn.DataPropertyName = "ArtistAvailabilityStatus";
-            this.artistAvailabilityStatusDataGridViewTextBoxColumn.HeaderText = "ArtistAvailabilityStatus";
-            this.artistAvailabilityStatusDataGridViewTextBoxColumn.Name = "artistAvailabilityStatusDataGridViewTextBoxColumn";
-            // 
-            // aRTISTBindingSource
-            // 
-            this.aRTISTBindingSource.DataMember = "ARTIST";
-            this.aRTISTBindingSource.DataSource = this.paseOneDS;
-            // 
-            // paseOneDS
-            // 
-            this.paseOneDS.DataSetName = "paseOneDS";
-            this.paseOneDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // clientIDDataGridViewTextBoxColumn
-            // 
-            this.clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
-            this.clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
-            this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
-            this.clientIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // clientFirstNameDataGridViewTextBoxColumn
-            // 
-            this.clientFirstNameDataGridViewTextBoxColumn.DataPropertyName = "ClientFirstName";
-            this.clientFirstNameDataGridViewTextBoxColumn.HeaderText = "ClientFirstName";
-            this.clientFirstNameDataGridViewTextBoxColumn.Name = "clientFirstNameDataGridViewTextBoxColumn";
-            // 
-            // clientLastNameDataGridViewTextBoxColumn
-            // 
-            this.clientLastNameDataGridViewTextBoxColumn.DataPropertyName = "ClientLastName";
-            this.clientLastNameDataGridViewTextBoxColumn.HeaderText = "ClientLastName";
-            this.clientLastNameDataGridViewTextBoxColumn.Name = "clientLastNameDataGridViewTextBoxColumn";
-            // 
-            // clientPhoneNumberDataGridViewTextBoxColumn
-            // 
-            this.clientPhoneNumberDataGridViewTextBoxColumn.DataPropertyName = "ClientPhoneNumber";
-            this.clientPhoneNumberDataGridViewTextBoxColumn.HeaderText = "ClientPhoneNumber";
-            this.clientPhoneNumberDataGridViewTextBoxColumn.Name = "clientPhoneNumberDataGridViewTextBoxColumn";
-            // 
-            // clientEmailDataGridViewTextBoxColumn
-            // 
-            this.clientEmailDataGridViewTextBoxColumn.DataPropertyName = "ClientEmail";
-            this.clientEmailDataGridViewTextBoxColumn.HeaderText = "ClientEmail";
-            this.clientEmailDataGridViewTextBoxColumn.Name = "clientEmailDataGridViewTextBoxColumn";
-            // 
-            // clientStatusDataGridViewTextBoxColumn
-            // 
-            this.clientStatusDataGridViewTextBoxColumn.DataPropertyName = "ClientStatus";
-            this.clientStatusDataGridViewTextBoxColumn.HeaderText = "ClientStatus";
-            this.clientStatusDataGridViewTextBoxColumn.Name = "clientStatusDataGridViewTextBoxColumn";
-            // 
-            // cLIENTBindingSource
-            // 
-            this.cLIENTBindingSource.DataMember = "CLIENT";
-            this.cLIENTBindingSource.DataSource = this.paseOneDS;
-            // 
             // aRTISTTableAdapter
             // 
             this.aRTISTTableAdapter.ClearBeforeFill = true;
@@ -733,12 +734,12 @@ namespace SilverTune.BOOKING
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aRTISTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paseOneDS)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aRTISTBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.paseOneDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource)).EndInit();
             this.ResumeLayout(false);
 

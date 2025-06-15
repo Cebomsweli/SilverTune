@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Extensions.Configuration;
 
 namespace SilverTune.BOOKING
 {
@@ -221,45 +224,89 @@ namespace SilverTune.BOOKING
             decimal total= Convert.ToDecimal( artistfeesTableAdapter.getFee(ArtistID,BookingType));
             BookingTotalAmount = total*BookingDuration;
 
-           
-            DialogResult result = MessageBox.Show(
-                                                    "Are you sure you want to save this booking information?",
-                                                    "Confirm Booking Save",
-                                                    MessageBoxButtons.YesNo,
-                                                    MessageBoxIcon.Question
-                                                );
+            //Preventing double booking
+           // DateTime timeValue = Convert.ToDateTime(time);
+            TimeSpan BookingStartTime = TimeSpan.Parse(time);
+            DateTime BookingEventDates = DateTime.Parse(BookingEventDate);
+            int conflict = CheckBookingConflict(ArtistID, BookingEventDates, BookingStartTime, BookingDuration);
 
-            if (result == DialogResult.Yes)
+            if (conflict > 0)
             {
-                // Insert the booking record
-                bookingTableAdapter.Insert1(ClientID, ArtistID, BookingEventDate, BookingEventLocation, BookingEventLocation, BookingDuration, time, BookingType, BookingTotalAmount, BookingStatus);
-
-                // Get Booking number
-                int bookingNo = Convert.ToInt32(bookingTableAdapter.getBookingNumber(ArtistID, ClientID, BookingEventDate));
-
-                // Prepare summary details (replace these variable names with your actual ones)
-                string summary = $"Booking Number: {bookingNo}\n" +
-                                 $"Event Date: {BookingEventDate}\n" +
-                                 $"Event Location: {BookingEventLocation}\n" +
-                                 $"Total Amount: {BookingTotalAmount:C}";
-
-                MessageBox.Show(
-                    $"Booking saved successfully!\n\nSummary:\n{summary}",
-                    "Booking Confirmed",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                );
+                MessageBox.Show("This artist already has a booking around this time. Please choose another time.", "Booking Conflict", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // stop saving
             }
             else
             {
-                MessageBox.Show(
-                    "Booking was not saved.",
-                    "Cancelled",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                );
+                // proceed to save booking
+                DialogResult result = MessageBox.Show(
+                                                "Are you sure you want to save this booking information?",
+                                                "Confirm Booking Save",
+                                                MessageBoxButtons.YesNo,
+                                                MessageBoxIcon.Question
+                                            );
+
+                if (result == DialogResult.Yes)
+                {
+                    // Insert the booking record
+                    bookingTableAdapter.Insert1(ClientID, ArtistID, BookingEventDate, BookingEventLocation, BookingEventLocation, BookingDuration, time, BookingType, BookingTotalAmount, BookingStatus);
+
+                    // Get Booking number
+                    int bookingNo = Convert.ToInt32(bookingTableAdapter.getBookingNumber(ArtistID, ClientID, BookingEventDate));
+
+                    // Prepare summary details (replace these variable names with your actual ones)
+                    string summary = $"Booking Number: {bookingNo}\n" +
+                                     $"Event Date: {BookingEventDate}\n" +
+                                     $"Event Location: {BookingEventLocation}\n" +
+                                     $"Total Amount: {BookingTotalAmount:C}";
+
+                    MessageBox.Show(
+                        $"Booking saved successfully!\n\nSummary:\n{summary}",
+                        "Booking Confirmed",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "Booking was not saved.",
+                        "Cancelled",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                }
+        }
+
+    }
+
+        private int CheckBookingConflict(int artistId, DateTime eventDate, TimeSpan eventTime, int duration)
+        {
+            int conflictCount = 0;
+            string connectionString = ConfigurationHelper.GetConnectionString(); // ✅ using from appsettings.json
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("CheckArtistBookingConflict", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@ArtistID", artistId);
+                    cmd.Parameters.AddWithValue("@BookingEventDate", eventDate.Date);
+                    cmd.Parameters.AddWithValue("@NewStartTime", eventTime);
+                    cmd.Parameters.AddWithValue("@NewDuration", duration);
+
+                    conn.Open();
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null && int.TryParse(result.ToString(), out int count))
+                        conflictCount = count;
+                }
             }
 
+            return conflictCount;
         }
+
+
+
     }
 }

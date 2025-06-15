@@ -7,12 +7,12 @@
 <DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="0" ViewPortY="0" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:ARTIST" ZOrder="5" X="70" Y="70" Height="305" Width="186" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:ARTISTFEES" ZOrder="1" X="326" Y="70" Height="172" Width="213" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
-    <Shape ID="DesignTable:BOOKING" ZOrder="4" X="609" Y="70" Height="324" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
-    <Shape ID="DesignTable:CLIENT" ZOrder="3" X="880" Y="70" Height="286" Width="186" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
+    <Shape ID="DesignTable:ARTISTFEES" ZOrder="2" X="326" Y="70" Height="172" Width="213" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
+    <Shape ID="DesignTable:BOOKING" ZOrder="1" X="609" Y="70" Height="343" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
+    <Shape ID="DesignTable:CLIENT" ZOrder="4" X="880" Y="70" Height="286" Width="186" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
   </Shapes>
   <Connectors>
-    <Connector ID="DesignRelation:FK__ARTISTFEE__Artis__68487DD7" ZOrder="2" LineWidth="11">
+    <Connector ID="DesignRelation:FK__ARTISTFEE__Artis__68487DD7" ZOrder="3" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>256</X>
