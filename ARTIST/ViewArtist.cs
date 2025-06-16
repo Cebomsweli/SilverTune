@@ -205,5 +205,10 @@ namespace SilverTune.ARTIST
         {
             aRTISTTableAdapter.FillByStageName(paseOneDS1.ARTIST, textBox11.Text);
         }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

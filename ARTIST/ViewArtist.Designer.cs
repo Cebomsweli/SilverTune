@@ -81,6 +81,17 @@ namespace SilverTune.ARTIST
             this.label14 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.artistIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artistFirstNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artistLastNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artistStageNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artistEmailDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artistIdentityNoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artistPhoneNumberDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artistImageDataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.artistAvailabilityStatusDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aRTISTBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.paseOneDS1 = new SilverTune.paseOneDS();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox12 = new System.Windows.Forms.TextBox();
@@ -98,17 +109,6 @@ namespace SilverTune.ARTIST
             this.label22 = new System.Windows.Forms.Label();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.aRTISTTableAdapter = new SilverTune.paseOneDSTableAdapters.ARTISTTableAdapter();
-            this.paseOneDS1 = new SilverTune.paseOneDS();
-            this.aRTISTBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.artistIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artistFirstNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artistLastNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artistStageNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artistEmailDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artistIdentityNoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artistPhoneNumberDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artistImageDataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.artistAvailabilityStatusDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -123,11 +123,11 @@ namespace SilverTune.ARTIST
             ((System.ComponentModel.ISupportInitialize)(this.paseOneDS)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aRTISTBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paseOneDS1)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.paseOneDS1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aRTISTBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -507,6 +507,7 @@ namespace SilverTune.ARTIST
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(1012, 231);
             this.dataGridView2.TabIndex = 87;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
             // artistIDDataGridViewTextBoxColumn
             // 
@@ -623,6 +624,71 @@ namespace SilverTune.ARTIST
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(1012, 231);
             this.dataGridView3.TabIndex = 91;
+            // 
+            // artistIDDataGridViewTextBoxColumn1
+            // 
+            this.artistIDDataGridViewTextBoxColumn1.DataPropertyName = "ArtistID";
+            this.artistIDDataGridViewTextBoxColumn1.HeaderText = "ArtistID";
+            this.artistIDDataGridViewTextBoxColumn1.Name = "artistIDDataGridViewTextBoxColumn1";
+            this.artistIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // artistFirstNameDataGridViewTextBoxColumn1
+            // 
+            this.artistFirstNameDataGridViewTextBoxColumn1.DataPropertyName = "ArtistFirstName";
+            this.artistFirstNameDataGridViewTextBoxColumn1.HeaderText = "ArtistFirstName";
+            this.artistFirstNameDataGridViewTextBoxColumn1.Name = "artistFirstNameDataGridViewTextBoxColumn1";
+            // 
+            // artistLastNameDataGridViewTextBoxColumn1
+            // 
+            this.artistLastNameDataGridViewTextBoxColumn1.DataPropertyName = "ArtistLastName";
+            this.artistLastNameDataGridViewTextBoxColumn1.HeaderText = "ArtistLastName";
+            this.artistLastNameDataGridViewTextBoxColumn1.Name = "artistLastNameDataGridViewTextBoxColumn1";
+            // 
+            // artistStageNameDataGridViewTextBoxColumn1
+            // 
+            this.artistStageNameDataGridViewTextBoxColumn1.DataPropertyName = "ArtistStageName";
+            this.artistStageNameDataGridViewTextBoxColumn1.HeaderText = "ArtistStageName";
+            this.artistStageNameDataGridViewTextBoxColumn1.Name = "artistStageNameDataGridViewTextBoxColumn1";
+            // 
+            // artistEmailDataGridViewTextBoxColumn1
+            // 
+            this.artistEmailDataGridViewTextBoxColumn1.DataPropertyName = "ArtistEmail";
+            this.artistEmailDataGridViewTextBoxColumn1.HeaderText = "ArtistEmail";
+            this.artistEmailDataGridViewTextBoxColumn1.Name = "artistEmailDataGridViewTextBoxColumn1";
+            // 
+            // artistIdentityNoDataGridViewTextBoxColumn1
+            // 
+            this.artistIdentityNoDataGridViewTextBoxColumn1.DataPropertyName = "ArtistIdentityNo";
+            this.artistIdentityNoDataGridViewTextBoxColumn1.HeaderText = "ArtistIdentityNo";
+            this.artistIdentityNoDataGridViewTextBoxColumn1.Name = "artistIdentityNoDataGridViewTextBoxColumn1";
+            // 
+            // artistPhoneNumberDataGridViewTextBoxColumn1
+            // 
+            this.artistPhoneNumberDataGridViewTextBoxColumn1.DataPropertyName = "ArtistPhoneNumber";
+            this.artistPhoneNumberDataGridViewTextBoxColumn1.HeaderText = "ArtistPhoneNumber";
+            this.artistPhoneNumberDataGridViewTextBoxColumn1.Name = "artistPhoneNumberDataGridViewTextBoxColumn1";
+            // 
+            // artistImageDataGridViewImageColumn1
+            // 
+            this.artistImageDataGridViewImageColumn1.DataPropertyName = "ArtistImage";
+            this.artistImageDataGridViewImageColumn1.HeaderText = "ArtistImage";
+            this.artistImageDataGridViewImageColumn1.Name = "artistImageDataGridViewImageColumn1";
+            // 
+            // artistAvailabilityStatusDataGridViewTextBoxColumn1
+            // 
+            this.artistAvailabilityStatusDataGridViewTextBoxColumn1.DataPropertyName = "ArtistAvailabilityStatus";
+            this.artistAvailabilityStatusDataGridViewTextBoxColumn1.HeaderText = "ArtistAvailabilityStatus";
+            this.artistAvailabilityStatusDataGridViewTextBoxColumn1.Name = "artistAvailabilityStatusDataGridViewTextBoxColumn1";
+            // 
+            // aRTISTBindingSource1
+            // 
+            this.aRTISTBindingSource1.DataMember = "ARTIST";
+            this.aRTISTBindingSource1.DataSource = this.paseOneDS1;
+            // 
+            // paseOneDS1
+            // 
+            this.paseOneDS1.DataSetName = "paseOneDS";
+            this.paseOneDS1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel4
             // 
@@ -777,71 +843,6 @@ namespace SilverTune.ARTIST
             // 
             this.aRTISTTableAdapter.ClearBeforeFill = true;
             // 
-            // paseOneDS1
-            // 
-            this.paseOneDS1.DataSetName = "paseOneDS";
-            this.paseOneDS1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // aRTISTBindingSource1
-            // 
-            this.aRTISTBindingSource1.DataMember = "ARTIST";
-            this.aRTISTBindingSource1.DataSource = this.paseOneDS1;
-            // 
-            // artistIDDataGridViewTextBoxColumn1
-            // 
-            this.artistIDDataGridViewTextBoxColumn1.DataPropertyName = "ArtistID";
-            this.artistIDDataGridViewTextBoxColumn1.HeaderText = "ArtistID";
-            this.artistIDDataGridViewTextBoxColumn1.Name = "artistIDDataGridViewTextBoxColumn1";
-            this.artistIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // artistFirstNameDataGridViewTextBoxColumn1
-            // 
-            this.artistFirstNameDataGridViewTextBoxColumn1.DataPropertyName = "ArtistFirstName";
-            this.artistFirstNameDataGridViewTextBoxColumn1.HeaderText = "ArtistFirstName";
-            this.artistFirstNameDataGridViewTextBoxColumn1.Name = "artistFirstNameDataGridViewTextBoxColumn1";
-            // 
-            // artistLastNameDataGridViewTextBoxColumn1
-            // 
-            this.artistLastNameDataGridViewTextBoxColumn1.DataPropertyName = "ArtistLastName";
-            this.artistLastNameDataGridViewTextBoxColumn1.HeaderText = "ArtistLastName";
-            this.artistLastNameDataGridViewTextBoxColumn1.Name = "artistLastNameDataGridViewTextBoxColumn1";
-            // 
-            // artistStageNameDataGridViewTextBoxColumn1
-            // 
-            this.artistStageNameDataGridViewTextBoxColumn1.DataPropertyName = "ArtistStageName";
-            this.artistStageNameDataGridViewTextBoxColumn1.HeaderText = "ArtistStageName";
-            this.artistStageNameDataGridViewTextBoxColumn1.Name = "artistStageNameDataGridViewTextBoxColumn1";
-            // 
-            // artistEmailDataGridViewTextBoxColumn1
-            // 
-            this.artistEmailDataGridViewTextBoxColumn1.DataPropertyName = "ArtistEmail";
-            this.artistEmailDataGridViewTextBoxColumn1.HeaderText = "ArtistEmail";
-            this.artistEmailDataGridViewTextBoxColumn1.Name = "artistEmailDataGridViewTextBoxColumn1";
-            // 
-            // artistIdentityNoDataGridViewTextBoxColumn1
-            // 
-            this.artistIdentityNoDataGridViewTextBoxColumn1.DataPropertyName = "ArtistIdentityNo";
-            this.artistIdentityNoDataGridViewTextBoxColumn1.HeaderText = "ArtistIdentityNo";
-            this.artistIdentityNoDataGridViewTextBoxColumn1.Name = "artistIdentityNoDataGridViewTextBoxColumn1";
-            // 
-            // artistPhoneNumberDataGridViewTextBoxColumn1
-            // 
-            this.artistPhoneNumberDataGridViewTextBoxColumn1.DataPropertyName = "ArtistPhoneNumber";
-            this.artistPhoneNumberDataGridViewTextBoxColumn1.HeaderText = "ArtistPhoneNumber";
-            this.artistPhoneNumberDataGridViewTextBoxColumn1.Name = "artistPhoneNumberDataGridViewTextBoxColumn1";
-            // 
-            // artistImageDataGridViewImageColumn1
-            // 
-            this.artistImageDataGridViewImageColumn1.DataPropertyName = "ArtistImage";
-            this.artistImageDataGridViewImageColumn1.HeaderText = "ArtistImage";
-            this.artistImageDataGridViewImageColumn1.Name = "artistImageDataGridViewImageColumn1";
-            // 
-            // artistAvailabilityStatusDataGridViewTextBoxColumn1
-            // 
-            this.artistAvailabilityStatusDataGridViewTextBoxColumn1.DataPropertyName = "ArtistAvailabilityStatus";
-            this.artistAvailabilityStatusDataGridViewTextBoxColumn1.HeaderText = "ArtistAvailabilityStatus";
-            this.artistAvailabilityStatusDataGridViewTextBoxColumn1.Name = "artistAvailabilityStatusDataGridViewTextBoxColumn1";
-            // 
             // ViewArtist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -874,12 +875,12 @@ namespace SilverTune.ARTIST
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aRTISTBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paseOneDS1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.paseOneDS1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aRTISTBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

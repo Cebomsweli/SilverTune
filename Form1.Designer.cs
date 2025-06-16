@@ -42,12 +42,18 @@ namespace SilverTune
             this.rECORDDJCHARGESToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.vIEWARTISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uPDATEARTISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aRCHIVEARTISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bOOKINGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rECORDBOOKINGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vIEWBOOKINGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aRCHIVEBOOKINGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEPORTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aRCHIVEARTISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vIEWARCHIVEDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vIEWEXISTINGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vIEWVERIFIEDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vIEWARCHIVEDToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.vIEWEXISTINGToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.vIEWARCHIVEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +72,7 @@ namespace SilverTune
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Gray;
+            this.menuStrip1.BackColor = System.Drawing.Color.Teal;
             this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -97,6 +103,7 @@ namespace SilverTune
             this.sTAFFToolStripMenuItem.Name = "sTAFFToolStripMenuItem";
             this.sTAFFToolStripMenuItem.Size = new System.Drawing.Size(131, 34);
             this.sTAFFToolStripMenuItem.Text = "CLIENTS";
+            this.sTAFFToolStripMenuItem.Click += new System.EventHandler(this.sTAFFToolStripMenuItem_Click);
             // 
             // aDDCLIENTToolStripMenuItem
             // 
@@ -112,6 +119,7 @@ namespace SilverTune
             this.aRCHIVECLIENTSToolStripMenuItem.Name = "aRCHIVECLIENTSToolStripMenuItem";
             this.aRCHIVECLIENTSToolStripMenuItem.Size = new System.Drawing.Size(261, 34);
             this.aRCHIVECLIENTSToolStripMenuItem.Text = "ARCHIVE CLIENTS";
+            this.aRCHIVECLIENTSToolStripMenuItem.Click += new System.EventHandler(this.aRCHIVECLIENTSToolStripMenuItem_Click);
             // 
             // uPDATECLIENTToolStripMenuItem
             // 
@@ -119,22 +127,27 @@ namespace SilverTune
             this.uPDATECLIENTToolStripMenuItem.Name = "uPDATECLIENTToolStripMenuItem";
             this.uPDATECLIENTToolStripMenuItem.Size = new System.Drawing.Size(261, 34);
             this.uPDATECLIENTToolStripMenuItem.Text = "UPDATE CLIENTS";
+            this.uPDATECLIENTToolStripMenuItem.Click += new System.EventHandler(this.uPDATECLIENTToolStripMenuItem_Click);
             // 
             // vIEWCLIENTSToolStripMenuItem
             // 
+            this.vIEWCLIENTSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.vIEWEXISTINGToolStripMenuItem1,
+            this.vIEWARCHIVEToolStripMenuItem});
             this.vIEWCLIENTSToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("vIEWCLIENTSToolStripMenuItem.Image")));
             this.vIEWCLIENTSToolStripMenuItem.Name = "vIEWCLIENTSToolStripMenuItem";
             this.vIEWCLIENTSToolStripMenuItem.Size = new System.Drawing.Size(261, 34);
             this.vIEWCLIENTSToolStripMenuItem.Text = "VIEW CLIENTS";
+            this.vIEWCLIENTSToolStripMenuItem.Click += new System.EventHandler(this.vIEWCLIENTSToolStripMenuItem_Click);
             // 
             // aRTISTToolStripMenuItem
             // 
             this.aRTISTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.rECORDARTISTToolStripMenuItem,
             this.rECORDDJCHARGESToolStripMenuItem1,
-            this.vIEWARTISTToolStripMenuItem,
             this.uPDATEARTISTToolStripMenuItem,
-            this.aRCHIVEARTISTToolStripMenuItem});
+            this.aRCHIVEARTISTToolStripMenuItem,
+            this.vIEWARTISTToolStripMenuItem});
             this.aRTISTToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.aRTISTToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.aRTISTToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aRTISTToolStripMenuItem.Image")));
@@ -160,6 +173,9 @@ namespace SilverTune
             // 
             // vIEWARTISTToolStripMenuItem
             // 
+            this.vIEWARTISTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.vIEWVERIFIEDToolStripMenuItem,
+            this.vIEWARCHIVEDToolStripMenuItem1});
             this.vIEWARTISTToolStripMenuItem.Name = "vIEWARTISTToolStripMenuItem";
             this.vIEWARTISTToolStripMenuItem.Size = new System.Drawing.Size(298, 34);
             this.vIEWARTISTToolStripMenuItem.Text = "VIEW ARTIST";
@@ -171,6 +187,13 @@ namespace SilverTune
             this.uPDATEARTISTToolStripMenuItem.Size = new System.Drawing.Size(298, 34);
             this.uPDATEARTISTToolStripMenuItem.Text = "UPDATE ARTIST";
             this.uPDATEARTISTToolStripMenuItem.Click += new System.EventHandler(this.uPDATEARTISTToolStripMenuItem_Click);
+            // 
+            // aRCHIVEARTISTToolStripMenuItem
+            // 
+            this.aRCHIVEARTISTToolStripMenuItem.Name = "aRCHIVEARTISTToolStripMenuItem";
+            this.aRCHIVEARTISTToolStripMenuItem.Size = new System.Drawing.Size(298, 34);
+            this.aRCHIVEARTISTToolStripMenuItem.Text = "ARCHIVE ARTIST";
+            this.aRCHIVEARTISTToolStripMenuItem.Click += new System.EventHandler(this.aRCHIVEARTISTToolStripMenuItem_Click);
             // 
             // bOOKINGToolStripMenuItem
             // 
@@ -195,15 +218,20 @@ namespace SilverTune
             // 
             // vIEWBOOKINGToolStripMenuItem
             // 
+            this.vIEWBOOKINGToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.vIEWARCHIVEDToolStripMenuItem,
+            this.vIEWEXISTINGToolStripMenuItem});
             this.vIEWBOOKINGToolStripMenuItem.Name = "vIEWBOOKINGToolStripMenuItem";
             this.vIEWBOOKINGToolStripMenuItem.Size = new System.Drawing.Size(277, 34);
             this.vIEWBOOKINGToolStripMenuItem.Text = "VIEW BOOKING";
+            this.vIEWBOOKINGToolStripMenuItem.Click += new System.EventHandler(this.vIEWBOOKINGToolStripMenuItem_Click);
             // 
             // aRCHIVEBOOKINGToolStripMenuItem
             // 
             this.aRCHIVEBOOKINGToolStripMenuItem.Name = "aRCHIVEBOOKINGToolStripMenuItem";
             this.aRCHIVEBOOKINGToolStripMenuItem.Size = new System.Drawing.Size(277, 34);
             this.aRCHIVEBOOKINGToolStripMenuItem.Text = "ARCHIVE BOOKING";
+            this.aRCHIVEBOOKINGToolStripMenuItem.Click += new System.EventHandler(this.aRCHIVEBOOKINGToolStripMenuItem_Click);
             // 
             // rEPORTSToolStripMenuItem
             // 
@@ -213,12 +241,47 @@ namespace SilverTune
             this.rEPORTSToolStripMenuItem.Size = new System.Drawing.Size(131, 34);
             this.rEPORTSToolStripMenuItem.Text = "REPORTS";
             // 
-            // aRCHIVEARTISTToolStripMenuItem
+            // vIEWARCHIVEDToolStripMenuItem
             // 
-            this.aRCHIVEARTISTToolStripMenuItem.Name = "aRCHIVEARTISTToolStripMenuItem";
-            this.aRCHIVEARTISTToolStripMenuItem.Size = new System.Drawing.Size(298, 34);
-            this.aRCHIVEARTISTToolStripMenuItem.Text = "ARCHIVE ARTIST";
-            this.aRCHIVEARTISTToolStripMenuItem.Click += new System.EventHandler(this.aRCHIVEARTISTToolStripMenuItem_Click);
+            this.vIEWARCHIVEDToolStripMenuItem.Name = "vIEWARCHIVEDToolStripMenuItem";
+            this.vIEWARCHIVEDToolStripMenuItem.Size = new System.Drawing.Size(253, 34);
+            this.vIEWARCHIVEDToolStripMenuItem.Text = "VIEW ARCHIVED ";
+            this.vIEWARCHIVEDToolStripMenuItem.Click += new System.EventHandler(this.vIEWARCHIVEDToolStripMenuItem_Click);
+            // 
+            // vIEWEXISTINGToolStripMenuItem
+            // 
+            this.vIEWEXISTINGToolStripMenuItem.Name = "vIEWEXISTINGToolStripMenuItem";
+            this.vIEWEXISTINGToolStripMenuItem.Size = new System.Drawing.Size(253, 34);
+            this.vIEWEXISTINGToolStripMenuItem.Text = "VIEW EXISTING";
+            this.vIEWEXISTINGToolStripMenuItem.Click += new System.EventHandler(this.vIEWEXISTINGToolStripMenuItem_Click);
+            // 
+            // vIEWVERIFIEDToolStripMenuItem
+            // 
+            this.vIEWVERIFIEDToolStripMenuItem.Name = "vIEWVERIFIEDToolStripMenuItem";
+            this.vIEWVERIFIEDToolStripMenuItem.Size = new System.Drawing.Size(247, 34);
+            this.vIEWVERIFIEDToolStripMenuItem.Text = "VIEW VERIFIED";
+            this.vIEWVERIFIEDToolStripMenuItem.Click += new System.EventHandler(this.vIEWVERIFIEDToolStripMenuItem_Click);
+            // 
+            // vIEWARCHIVEDToolStripMenuItem1
+            // 
+            this.vIEWARCHIVEDToolStripMenuItem1.Name = "vIEWARCHIVEDToolStripMenuItem1";
+            this.vIEWARCHIVEDToolStripMenuItem1.Size = new System.Drawing.Size(247, 34);
+            this.vIEWARCHIVEDToolStripMenuItem1.Text = "VIEW ARCHIVED";
+            this.vIEWARCHIVEDToolStripMenuItem1.Click += new System.EventHandler(this.vIEWARCHIVEDToolStripMenuItem1_Click);
+            // 
+            // vIEWEXISTINGToolStripMenuItem1
+            // 
+            this.vIEWEXISTINGToolStripMenuItem1.Name = "vIEWEXISTINGToolStripMenuItem1";
+            this.vIEWEXISTINGToolStripMenuItem1.Size = new System.Drawing.Size(235, 34);
+            this.vIEWEXISTINGToolStripMenuItem1.Text = "VIEW EXISTING";
+            this.vIEWEXISTINGToolStripMenuItem1.Click += new System.EventHandler(this.vIEWEXISTINGToolStripMenuItem1_Click);
+            // 
+            // vIEWARCHIVEToolStripMenuItem
+            // 
+            this.vIEWARCHIVEToolStripMenuItem.Name = "vIEWARCHIVEToolStripMenuItem";
+            this.vIEWARCHIVEToolStripMenuItem.Size = new System.Drawing.Size(235, 34);
+            this.vIEWARCHIVEToolStripMenuItem.Text = "VIEW ARCHIVE";
+            this.vIEWARCHIVEToolStripMenuItem.Click += new System.EventHandler(this.vIEWARCHIVEToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -259,6 +322,12 @@ namespace SilverTune
         private System.Windows.Forms.ToolStripMenuItem aRCHIVEBOOKINGToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rEPORTSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aRCHIVEARTISTToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vIEWARCHIVEDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vIEWEXISTINGToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vIEWVERIFIEDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vIEWARCHIVEDToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem vIEWEXISTINGToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem vIEWARCHIVEToolStripMenuItem;
     }
 }
 

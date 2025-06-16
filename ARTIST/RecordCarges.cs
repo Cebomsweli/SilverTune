@@ -150,5 +150,10 @@ namespace SilverTune.ARTIST
             // Disable editing (if it's for viewing only)
             dgv.ReadOnly = true;
         }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            aRTISTTableAdapter.FillByStageName(paseOneDS.ARTIST,textBox3.Text);
+        }
     }
 }

@@ -66,12 +66,37 @@ namespace SilverTune
 
         private void button1_Click(object sender, EventArgs e)
         {
+            DialogResult confirm = MessageBox.Show(
+                                                        "Do you want to create the default Super User?\n\nUsername: admin2025\nPassword: tune@2025",
+                                                        "Confirm Super User Login",
+                                                        MessageBoxButtons.YesNo,
+                                                        MessageBoxIcon.Question
+                                                    );
+
+            if (confirm == DialogResult.Yes)
+            {
+                if (txtUsername.Text == "admin2025" && txtPassword.Text == "tune@2025")
+                {
+                    MessageBox.Show("✅ Super User logged in successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Open HomePage and hide current form
+                    Menu home = new Menu();
+                    home.Show();
+
+                    this.Hide(); // Or use this.Close(); if you want to completely exit login form
+                }
+                else
+                {
+                    MessageBox.Show("⚠️ Invalid Super User credentials. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Login cancelled.", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
         }
 
-        //private void label1_Click(object sender, EventArgs e)
-        //{
-        //    // Optional: any label click logic
-        //}
+
     }
 }

@@ -70,21 +70,89 @@ namespace SilverTune
 
         private void vIEWARTISTToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ARTIST.ViewArtist view = new ARTIST.ViewArtist();
-            FormSetup(view);
+           
 
         }
 
         private void uPDATEARTISTToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ARTIST.UpdateArtist updateArtist = new ARTIST.UpdateArtist();
+            ARTIST.UpdateArtistV2 updateArtist = new ARTIST.UpdateArtistV2();
             FormSetup(updateArtist);
         }
 
         private void aRCHIVEARTISTToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ARTIST.ArchiveStatus archiveStatus = new ARTIST.ArchiveStatus();
+            ARTIST.ArchiveArtist archiveStatus = new ARTIST.ArchiveArtist();
             FormSetup(archiveStatus);
+        }
+
+        private void aRCHIVECLIENTSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CLIENT.ARchiveClient aRchiveClient = new CLIENT.ARchiveClient();
+            FormSetup(aRchiveClient);
+        }
+
+        private void uPDATECLIENTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CLIENT.UpdateClient updateClient = new CLIENT.UpdateClient();
+            FormSetup(updateClient);
+        }
+
+        private void vIEWCLIENTSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void vIEWBOOKINGToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void aRCHIVEBOOKINGToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BOOKING.Archive archive = new BOOKING.Archive();
+            FormSetup(archive);
+        }
+
+        private void sTAFFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vIEWARCHIVEDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BOOKING.ViewArchived viewArchived = new BOOKING.ViewArchived();
+            FormSetup(viewArchived);
+        }
+
+        private void vIEWEXISTINGToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BOOKING.ViewBookings viewBookings = new BOOKING.ViewBookings();
+            FormSetup(viewBookings);
+        }
+
+        private void vIEWVERIFIEDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ARTIST.ViewVerified viewVerified = new ARTIST.ViewVerified();
+            FormSetup(viewVerified);
+        }
+
+        private void vIEWARCHIVEDToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ARTIST.ViewArchived viewArchived = new ARTIST.ViewArchived();
+            FormSetup(viewArchived);
+        }
+
+        private void vIEWARCHIVEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CLIENT.ViewArchiveClient viewArchiveClient = new CLIENT.ViewArchiveClient();
+            FormSetup(viewArchiveClient);
+        }
+
+        private void vIEWEXISTINGToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CLIENT.ViewClient viewClient = new CLIENT.ViewClient();
+            FormSetup(viewClient);
         }
     }
 }

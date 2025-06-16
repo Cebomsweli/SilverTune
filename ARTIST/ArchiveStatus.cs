@@ -68,5 +68,10 @@ namespace SilverTune.ARTIST
             // Disable editing (if it's for viewing only)
             dgv.ReadOnly = true;
         }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

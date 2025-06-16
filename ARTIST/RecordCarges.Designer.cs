@@ -36,6 +36,13 @@ namespace SilverTune.ARTIST
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.artistIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artistStageNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artistGenreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artistCountryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artistAvailabilityStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aRTISTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.paseOneDS = new SilverTune.paseOneDS();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -44,20 +51,13 @@ namespace SilverTune.ARTIST
             this.artChargeHour = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.artName = new System.Windows.Forms.TextBox();
-            this.paseOneDS = new SilverTune.paseOneDS();
-            this.aRTISTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aRTISTTableAdapter = new SilverTune.paseOneDSTableAdapters.ARTISTTableAdapter();
-            this.artistAvailabilityStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artistCountryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artistGenreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artistStageNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artistIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artistfeesTableAdapter = new SilverTune.paseOneDSTableAdapters.ARTISTFEESTableAdapter();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.paseOneDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aRTISTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paseOneDS)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -110,6 +110,7 @@ namespace SilverTune.ARTIST
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(358, 32);
             this.textBox3.TabIndex = 30;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label3
             // 
@@ -136,6 +137,47 @@ namespace SilverTune.ARTIST
             this.dataGridView1.Size = new System.Drawing.Size(931, 82);
             this.dataGridView1.TabIndex = 28;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // artistIDDataGridViewTextBoxColumn
+            // 
+            this.artistIDDataGridViewTextBoxColumn.DataPropertyName = "ArtistID";
+            this.artistIDDataGridViewTextBoxColumn.HeaderText = "ArtistID";
+            this.artistIDDataGridViewTextBoxColumn.Name = "artistIDDataGridViewTextBoxColumn";
+            this.artistIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // artistStageNameDataGridViewTextBoxColumn
+            // 
+            this.artistStageNameDataGridViewTextBoxColumn.DataPropertyName = "ArtistStageName";
+            this.artistStageNameDataGridViewTextBoxColumn.HeaderText = "ArtistStageName";
+            this.artistStageNameDataGridViewTextBoxColumn.Name = "artistStageNameDataGridViewTextBoxColumn";
+            // 
+            // artistGenreDataGridViewTextBoxColumn
+            // 
+            this.artistGenreDataGridViewTextBoxColumn.DataPropertyName = "ArtistGenre";
+            this.artistGenreDataGridViewTextBoxColumn.HeaderText = "ArtistGenre";
+            this.artistGenreDataGridViewTextBoxColumn.Name = "artistGenreDataGridViewTextBoxColumn";
+            // 
+            // artistCountryNameDataGridViewTextBoxColumn
+            // 
+            this.artistCountryNameDataGridViewTextBoxColumn.DataPropertyName = "ArtistCountryName";
+            this.artistCountryNameDataGridViewTextBoxColumn.HeaderText = "ArtistCountryName";
+            this.artistCountryNameDataGridViewTextBoxColumn.Name = "artistCountryNameDataGridViewTextBoxColumn";
+            // 
+            // artistAvailabilityStatusDataGridViewTextBoxColumn
+            // 
+            this.artistAvailabilityStatusDataGridViewTextBoxColumn.DataPropertyName = "ArtistAvailabilityStatus";
+            this.artistAvailabilityStatusDataGridViewTextBoxColumn.HeaderText = "ArtistAvailabilityStatus";
+            this.artistAvailabilityStatusDataGridViewTextBoxColumn.Name = "artistAvailabilityStatusDataGridViewTextBoxColumn";
+            // 
+            // aRTISTBindingSource
+            // 
+            this.aRTISTBindingSource.DataMember = "ARTIST";
+            this.aRTISTBindingSource.DataSource = this.paseOneDS;
+            // 
+            // paseOneDS
+            // 
+            this.paseOneDS.DataSetName = "paseOneDS";
+            this.paseOneDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tableLayoutPanel1
             // 
@@ -216,50 +258,9 @@ namespace SilverTune.ARTIST
             this.artName.Size = new System.Drawing.Size(283, 32);
             this.artName.TabIndex = 0;
             // 
-            // paseOneDS
-            // 
-            this.paseOneDS.DataSetName = "paseOneDS";
-            this.paseOneDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // aRTISTBindingSource
-            // 
-            this.aRTISTBindingSource.DataMember = "ARTIST";
-            this.aRTISTBindingSource.DataSource = this.paseOneDS;
-            // 
             // aRTISTTableAdapter
             // 
             this.aRTISTTableAdapter.ClearBeforeFill = true;
-            // 
-            // artistAvailabilityStatusDataGridViewTextBoxColumn
-            // 
-            this.artistAvailabilityStatusDataGridViewTextBoxColumn.DataPropertyName = "ArtistAvailabilityStatus";
-            this.artistAvailabilityStatusDataGridViewTextBoxColumn.HeaderText = "ArtistAvailabilityStatus";
-            this.artistAvailabilityStatusDataGridViewTextBoxColumn.Name = "artistAvailabilityStatusDataGridViewTextBoxColumn";
-            // 
-            // artistCountryNameDataGridViewTextBoxColumn
-            // 
-            this.artistCountryNameDataGridViewTextBoxColumn.DataPropertyName = "ArtistCountryName";
-            this.artistCountryNameDataGridViewTextBoxColumn.HeaderText = "ArtistCountryName";
-            this.artistCountryNameDataGridViewTextBoxColumn.Name = "artistCountryNameDataGridViewTextBoxColumn";
-            // 
-            // artistGenreDataGridViewTextBoxColumn
-            // 
-            this.artistGenreDataGridViewTextBoxColumn.DataPropertyName = "ArtistGenre";
-            this.artistGenreDataGridViewTextBoxColumn.HeaderText = "ArtistGenre";
-            this.artistGenreDataGridViewTextBoxColumn.Name = "artistGenreDataGridViewTextBoxColumn";
-            // 
-            // artistStageNameDataGridViewTextBoxColumn
-            // 
-            this.artistStageNameDataGridViewTextBoxColumn.DataPropertyName = "ArtistStageName";
-            this.artistStageNameDataGridViewTextBoxColumn.HeaderText = "ArtistStageName";
-            this.artistStageNameDataGridViewTextBoxColumn.Name = "artistStageNameDataGridViewTextBoxColumn";
-            // 
-            // artistIDDataGridViewTextBoxColumn
-            // 
-            this.artistIDDataGridViewTextBoxColumn.DataPropertyName = "ArtistID";
-            this.artistIDDataGridViewTextBoxColumn.HeaderText = "ArtistID";
-            this.artistIDDataGridViewTextBoxColumn.Name = "artistIDDataGridViewTextBoxColumn";
-            this.artistIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // artistfeesTableAdapter
             // 
@@ -277,9 +278,9 @@ namespace SilverTune.ARTIST
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.paseOneDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aRTISTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paseOneDS)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

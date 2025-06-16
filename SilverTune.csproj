@@ -60,7 +60,9 @@
     <Reference Include="Microsoft.Extensions.Primitives, Version=9.0.0.6, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Extensions.Primitives.9.0.6\lib\net462\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
@@ -101,6 +103,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ARTIST\ArchiveArtist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ARTIST\ArchiveArtist.Designer.cs">
+      <DependentUpon>ArchiveArtist.cs</DependentUpon>
+    </Compile>
     <Compile Include="ARTIST\ArchiveStatus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,17 +133,53 @@
     <Compile Include="ARTIST\UpdateArtist.Designer.cs">
       <DependentUpon>UpdateArtist.cs</DependentUpon>
     </Compile>
+    <Compile Include="ARTIST\UpdateArtistV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ARTIST\UpdateArtistV2.Designer.cs">
+      <DependentUpon>UpdateArtistV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ARTIST\ViewArchived.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ARTIST\ViewArchived.Designer.cs">
+      <DependentUpon>ViewArchived.cs</DependentUpon>
+    </Compile>
     <Compile Include="ARTIST\ViewArtist.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ARTIST\ViewArtist.Designer.cs">
       <DependentUpon>ViewArtist.cs</DependentUpon>
     </Compile>
+    <Compile Include="ARTIST\ViewVerified.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ARTIST\ViewVerified.Designer.cs">
+      <DependentUpon>ViewVerified.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BOOKING\Archive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BOOKING\Archive.Designer.cs">
+      <DependentUpon>Archive.cs</DependentUpon>
+    </Compile>
     <Compile Include="BOOKING\ArtistBooking.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BOOKING\ArtistBooking.Designer.cs">
       <DependentUpon>ArtistBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BOOKING\ViewArchived.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BOOKING\ViewArchived.Designer.cs">
+      <DependentUpon>ViewArchived.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BOOKING\ViewBookings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BOOKING\ViewBookings.Designer.cs">
+      <DependentUpon>ViewBookings.cs</DependentUpon>
     </Compile>
     <Compile Include="CLIENT\ARchiveClient.cs">
       <SubType>Form</SubType>
@@ -154,6 +198,12 @@
     </Compile>
     <Compile Include="CLIENT\UpdateClient.Designer.cs">
       <DependentUpon>UpdateClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CLIENT\ViewArchiveClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CLIENT\ViewArchiveClient.Designer.cs">
+      <DependentUpon>ViewArchiveClient.cs</DependentUpon>
     </Compile>
     <Compile Include="CLIENT\ViewClient.cs">
       <SubType>Form</SubType>
@@ -180,6 +230,9 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="paseOneDS.cs">
+      <DependentUpon>paseOneDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="paseOneDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -187,6 +240,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ARTIST\ArchiveArtist.resx">
+      <DependentUpon>ArchiveArtist.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ARTIST\ArchiveStatus.resx">
       <DependentUpon>ArchiveStatus.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,11 +255,29 @@
     <EmbeddedResource Include="ARTIST\UpdateArtist.resx">
       <DependentUpon>UpdateArtist.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ARTIST\UpdateArtistV2.resx">
+      <DependentUpon>UpdateArtistV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ARTIST\ViewArchived.resx">
+      <DependentUpon>ViewArchived.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ARTIST\ViewArtist.resx">
       <DependentUpon>ViewArtist.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ARTIST\ViewVerified.resx">
+      <DependentUpon>ViewVerified.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BOOKING\Archive.resx">
+      <DependentUpon>Archive.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BOOKING\ArtistBooking.resx">
       <DependentUpon>ArtistBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BOOKING\ViewArchived.resx">
+      <DependentUpon>ViewArchived.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BOOKING\ViewBookings.resx">
+      <DependentUpon>ViewBookings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CLIENT\ARchiveClient.resx">
       <DependentUpon>ARchiveClient.cs</DependentUpon>
@@ -213,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CLIENT\UpdateClient.resx">
       <DependentUpon>UpdateClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CLIENT\ViewArchiveClient.resx">
+      <DependentUpon>ViewArchiveClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CLIENT\ViewClient.resx">
       <DependentUpon>ViewClient.cs</DependentUpon>
