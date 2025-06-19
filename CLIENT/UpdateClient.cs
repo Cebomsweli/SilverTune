@@ -12,6 +12,7 @@ namespace SilverTune.CLIENT
 {
     public partial class UpdateClient : Form
     {
+        ErrorHandler errorHandler = new ErrorHandler();
         //fields
         public int ClientID { get; set; }
 
@@ -39,15 +40,25 @@ namespace SilverTune.CLIENT
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
 
             // Set background and grid colors
-            dgv.BackgroundColor = Color.White;
+            // Set background and grid line colors
+            dgv.BackgroundColor = Color.FromArgb(64, 64, 64); // Entire grid background
             dgv.GridColor = Color.LightGray;
 
-            // Customize column headers
+            // Header style
             dgv.EnableHeadersVisualStyles = false;
-            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(54, 78, 114); // Deep blue
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(32, 32, 32); // Even darker for contrast
             dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
 
+            // Cell style
+            dgv.DefaultCellStyle.BackColor = Color.FromArgb(64, 64, 64);  // Cell background (ControlDarkDark)
+            dgv.DefaultCellStyle.ForeColor = Color.White;                 // White text
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(96, 96, 96); // Slightly lighter on selection
+            dgv.DefaultCellStyle.SelectionForeColor = Color.White;
+            dgv.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+
+            // Optional: Alternate row style (if needed)
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(70, 70, 70); // Slight variation for readability
             // Set default row style
             dgv.DefaultCellStyle.Font = new Font("Segoe UI", 10);
             dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(80, 120, 180);
@@ -138,7 +149,7 @@ namespace SilverTune.CLIENT
         {
             //update email
 
-            if (string.IsNullOrWhiteSpace(txtEmail.Text))
+            if (!errorHandler.ValidateEmail(txtEmail.Text))
             {
                 MessageBox.Show("Please enter an Email before updating.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -149,39 +160,43 @@ namespace SilverTune.CLIENT
                 MessageBox.Show("Please select a valid Client before updating.", "Client Not Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            // Ask for confirmation
-            DialogResult result = MessageBox.Show(
-                "Are you sure you want to update the client's Email?",
-                "Confirm Update",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
-
-            if (result == DialogResult.Yes)
-            {
-                try
-                {
-                    // Perform the update
-                    cLIENTTableAdapter.UpdateEmail(txtEmail.Text, ClientID);
-                    cLIENTTableAdapter.Fill(paseOneDS.CLIENT);
-
-                    MessageBox.Show("Email updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"An error occurred while updating: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
             else
             {
-                MessageBox.Show("Update canceled by user.", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Ask for confirmation
+                DialogResult result = MessageBox.Show(
+                    "Are you sure you want to update the client's Email?",
+                    "Confirm Update",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        // Perform the update
+                        cLIENTTableAdapter.UpdateEmail(txtEmail.Text, ClientID);
+                        cLIENTTableAdapter.Fill(paseOneDS.CLIENT);
+
+                        MessageBox.Show("Email updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"An error occurred while updating: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Update canceled by user.", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
+
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtPhonno.Text))
+            if (!errorHandler.IsValidPhoneNumber(txtPhonno.Text))
             {
                 MessageBox.Show("Please enter a cellphone number before updating.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -192,41 +207,45 @@ namespace SilverTune.CLIENT
                 MessageBox.Show("Please select a valid client before updating.", "client Not Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            // Ask for confirmation
-            DialogResult result = MessageBox.Show(
-                "Are you sure you want to update the client's phone number?",
-                "Confirm Update",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
-
-            if (result == DialogResult.Yes)
-            {
-                try
-                {
-                    // Perform the update
-                    cLIENTTableAdapter.UpdatePhoneNumber(Convert.ToInt32( txtPhonno.Text), ClientID);
-                    cLIENTTableAdapter.Fill(paseOneDS.CLIENT);
-
-                    MessageBox.Show("Phone number updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"An error occurred while updating: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
             else
             {
-                MessageBox.Show("Update canceled by user.", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Ask for confirmation
+                DialogResult result = MessageBox.Show(
+                    "Are you sure you want to update the client's phone number?",
+                    "Confirm Update",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        // Perform the update
+                        cLIENTTableAdapter.UpdatePhoneNumber(Convert.ToInt32(txtPhonno.Text), ClientID);
+                        cLIENTTableAdapter.Fill(paseOneDS.CLIENT);
+
+                        MessageBox.Show("Phone number updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"An error occurred while updating: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Update canceled by user.", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
+
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtStreetName.Text))
+            if (!errorHandler.IsValidName(txtStreetName.Text))
             {
-                MessageBox.Show("Please enter a Street name before updating.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a valid Street name before updating.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -235,41 +254,45 @@ namespace SilverTune.CLIENT
                 MessageBox.Show("Please select a valid client before updating.", "client Not Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            // Ask for confirmation
-            DialogResult result = MessageBox.Show(
-                "Are you sure you want to update the client's Street name?",
-                "Confirm Update",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
-
-            if (result == DialogResult.Yes)
-            {
-                try
-                {
-                    // Perform the update
-                    cLIENTTableAdapter.UpdateStreetName(txtStreetName.Text, ClientID);
-                    cLIENTTableAdapter.Fill(paseOneDS.CLIENT);
-
-                    MessageBox.Show("Street name updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"An error occurred while updating: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
             else
             {
-                MessageBox.Show("Update canceled by user.", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Ask for confirmation
+                DialogResult result = MessageBox.Show(
+                    "Are you sure you want to update the client's Street name?",
+                    "Confirm Update",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        // Perform the update
+                        cLIENTTableAdapter.UpdateStreetName(txtStreetName.Text, ClientID);
+                        cLIENTTableAdapter.Fill(paseOneDS.CLIENT);
+
+                        MessageBox.Show("Street name updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"An error occurred while updating: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Update canceled by user.", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
+
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtStreetNumber.Text))
+            if (!errorHandler.isNumber(txtStreetNumber.Text))
             {
-                MessageBox.Show("Please enter a cellphone number before updating.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a street number before updating.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -278,39 +301,41 @@ namespace SilverTune.CLIENT
                 MessageBox.Show("Please select a valid client before updating.", "client Not Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            // Ask for confirmation
-            DialogResult result = MessageBox.Show(
-                "Are you sure you want to update the client's Street number?",
-                "Confirm Update",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
-
-            if (result == DialogResult.Yes)
-            {
-                try
-                {
-                    // Perform the update
-                    cLIENTTableAdapter.UpdateStreetNumber(txtStreetNumber.Text, ClientID);
-                    cLIENTTableAdapter.Fill(paseOneDS.CLIENT);
-
-                    MessageBox.Show("Street number updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"An error occurred while updating: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
             else
             {
-                MessageBox.Show("Update canceled by user.", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Ask for confirmation
+                DialogResult result = MessageBox.Show(
+                    "Are you sure you want to update the client's Street number?",
+                    "Confirm Update",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        // Perform the update
+                        cLIENTTableAdapter.UpdateStreetNumber(txtStreetNumber.Text, ClientID);
+                        cLIENTTableAdapter.Fill(paseOneDS.CLIENT);
+
+                        MessageBox.Show("Street number updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"An error occurred while updating: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Update canceled by user.", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtCity.Text))
+            if (!errorHandler.IsValidName(txtCity.Text))
             {
                 MessageBox.Show("Please enter an City before updating.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -321,39 +346,43 @@ namespace SilverTune.CLIENT
                 MessageBox.Show("Please select a valid client before updating.", "client Not Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            // Ask for confirmation
-            DialogResult result = MessageBox.Show(
-                "Are you sure you want to update the client's City?",
-                "Confirm Update",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
-
-            if (result == DialogResult.Yes)
-            {
-                try
-                {
-                    // Perform the update
-                    cLIENTTableAdapter.UpdateCityName(txtCity.Text, ClientID);
-                    cLIENTTableAdapter.Fill(paseOneDS.CLIENT);
-
-                    MessageBox.Show("City updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"An error occurred while updating: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
             else
             {
-                MessageBox.Show("Update canceled by user.", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Ask for confirmation
+                DialogResult result = MessageBox.Show(
+                    "Are you sure you want to update the client's City?",
+                    "Confirm Update",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        // Perform the update
+                        cLIENTTableAdapter.UpdateCityName(txtCity.Text, ClientID);
+                        cLIENTTableAdapter.Fill(paseOneDS.CLIENT);
+
+                        MessageBox.Show("City updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"An error occurred while updating: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Update canceled by user.", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
+
+            
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtCountry.Text))
+            if (!errorHandler.IsValidName(txtCountry.Text))
             {
                 MessageBox.Show("Please enter an City before updating.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -396,7 +425,7 @@ namespace SilverTune.CLIENT
 
         private void button7_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtPostCode.Text))
+            if (!errorHandler.isNumber(txtPostCode.Text))
             {
                 MessageBox.Show("Please enter a postal code before updating.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -407,34 +436,43 @@ namespace SilverTune.CLIENT
                 MessageBox.Show("Please select a valid client before updating.", "client Not Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            // Ask for confirmation
-            DialogResult result = MessageBox.Show(
-                "Are you sure you want to update the client's postal code?",
-                "Confirm Update",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
-
-            if (result == DialogResult.Yes)
-            {
-                try
-                {
-                    // Perform the update
-                    cLIENTTableAdapter.UpdatePostCode(Convert.ToInt32(txtPostCode.Text), ClientID);
-                    cLIENTTableAdapter.Fill(paseOneDS.CLIENT);
-
-                    MessageBox.Show("Postal code updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"An error occurred while updating: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
             else
             {
-                MessageBox.Show("Update canceled by user.", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Ask for confirmation
+                DialogResult result = MessageBox.Show(
+                    "Are you sure you want to update the client's postal code?",
+                    "Confirm Update",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        // Perform the update
+                        cLIENTTableAdapter.UpdatePostCode(Convert.ToInt32(txtPostCode.Text), ClientID);
+                        cLIENTTableAdapter.Fill(paseOneDS.CLIENT);
+
+                        MessageBox.Show("Postal code updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"An error occurred while updating: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Update canceled by user.", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
+
+            
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

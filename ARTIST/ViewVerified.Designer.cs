@@ -30,6 +30,7 @@ namespace SilverTune.ARTIST
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewVerified));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -71,10 +72,12 @@ namespace SilverTune.ARTIST
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1217, 690);
@@ -84,6 +87,8 @@ namespace SilverTune.ARTIST
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.txtPhoneNo);
             this.groupBox3.Controls.Add(this.txtEmail);
@@ -96,6 +101,7 @@ namespace SilverTune.ARTIST
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.pctArt);
             this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox3.Location = new System.Drawing.Point(64, 345);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(1063, 272);
@@ -105,6 +111,7 @@ namespace SilverTune.ARTIST
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(804, 229);
             this.label8.Name = "label8";
@@ -114,6 +121,8 @@ namespace SilverTune.ARTIST
             // 
             // txtPhoneNo
             // 
+            this.txtPhoneNo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPhoneNo.Location = new System.Drawing.Point(239, 229);
             this.txtPhoneNo.Name = "txtPhoneNo";
             this.txtPhoneNo.Size = new System.Drawing.Size(300, 32);
@@ -121,6 +130,8 @@ namespace SilverTune.ARTIST
             // 
             // txtEmail
             // 
+            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmail.Location = new System.Drawing.Point(239, 181);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(300, 32);
@@ -128,6 +139,8 @@ namespace SilverTune.ARTIST
             // 
             // txtIdNo
             // 
+            this.txtIdNo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtIdNo.Location = new System.Drawing.Point(239, 131);
             this.txtIdNo.Name = "txtIdNo";
             this.txtIdNo.Size = new System.Drawing.Size(300, 32);
@@ -135,6 +148,8 @@ namespace SilverTune.ARTIST
             // 
             // txtName
             // 
+            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtName.Location = new System.Drawing.Point(239, 89);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(300, 32);
@@ -142,6 +157,8 @@ namespace SilverTune.ARTIST
             // 
             // txtStageName
             // 
+            this.txtStageName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtStageName.Location = new System.Drawing.Point(239, 44);
             this.txtStageName.Name = "txtStageName";
             this.txtStageName.Size = new System.Drawing.Size(300, 32);
@@ -185,7 +202,7 @@ namespace SilverTune.ARTIST
             // 
             // pctArt
             // 
-            this.pctArt.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pctArt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pctArt.Location = new System.Drawing.Point(701, 44);
             this.pctArt.Name = "pctArt";
             this.pctArt.Size = new System.Drawing.Size(309, 157);
@@ -203,9 +220,12 @@ namespace SilverTune.ARTIST
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.dataGridView2);
             this.groupBox2.Controls.Add(this.textBox11);
             this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox2.Location = new System.Drawing.Point(64, 31);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1063, 308);
@@ -215,6 +235,8 @@ namespace SilverTune.ARTIST
             // 
             // dataGridView2
             // 
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -324,6 +346,8 @@ namespace SilverTune.ARTIST
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1217, 690);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);

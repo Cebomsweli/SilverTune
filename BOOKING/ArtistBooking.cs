@@ -92,15 +92,25 @@ namespace SilverTune.BOOKING
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
 
             // Set background and grid colors
-            dgv.BackgroundColor = Color.White;
+            // Set background and grid line colors
+            dgv.BackgroundColor = Color.FromArgb(64, 64, 64); // Entire grid background
             dgv.GridColor = Color.LightGray;
 
-            // Customize column headers
+            // Header style
             dgv.EnableHeadersVisualStyles = false;
-            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(54, 78, 114); // Deep blue
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(32, 32, 32); // Even darker for contrast
             dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
 
+            // Cell style
+            dgv.DefaultCellStyle.BackColor = Color.FromArgb(64, 64, 64);  // Cell background (ControlDarkDark)
+            dgv.DefaultCellStyle.ForeColor = Color.White;                 // White text
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(96, 96, 96); // Slightly lighter on selection
+            dgv.DefaultCellStyle.SelectionForeColor = Color.White;
+            dgv.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+
+            // Optional: Alternate row style (if needed)
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(70, 70, 70); // Slight variation for readability
             // Set default row style
             dgv.DefaultCellStyle.Font = new Font("Segoe UI", 10);
             dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(80, 120, 180);
@@ -207,7 +217,10 @@ namespace SilverTune.BOOKING
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (true)
+            {
 
+            }
 
             BookingEventDate = eventDateTxt.Text;
             BookingEventLocation = locTxt.Text;
@@ -229,11 +242,35 @@ namespace SilverTune.BOOKING
             TimeSpan BookingStartTime = TimeSpan.Parse(time);
             DateTime BookingEventDates = DateTime.Parse(BookingEventDate);
             int conflict = CheckBookingConflict(ArtistID, BookingEventDates, BookingStartTime, BookingDuration);
-
+            ErrorHandler errorHandler = new ErrorHandler();
             if (conflict > 0)
             {
                 MessageBox.Show("This artist already has a booking around this time. Please choose another time.", "Booking Conflict", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // stop saving
+            }
+            else if (locTxt.Text == null)
+            {
+                MessageBox.Show("Please enter the event location before proceeding!");
+            }
+            else if (ArtistID==0 )
+            {
+                MessageBox.Show("Please search and select the artist before proceeding!");
+            }
+            else if (ClientID == 0)
+            {
+                MessageBox.Show("Please search and select the client before proceeding!");
+            }
+            else if (BookingTotalAmount==0)
+            {
+                MessageBox.Show("Please go to the artist and record the artist's fees!");
+            }
+            else if (Convert.ToInt32(artistfeesTableAdapter.getFee(ArtistID, "Organisation"))<=0)
+            {
+                MessageBox.Show("Please go to the artist and record the artist's organisation fees!");
+            }
+            else if (Convert.ToInt32(artistfeesTableAdapter.getFee(ArtistID, "Individual")) <= 0)
+            {
+                MessageBox.Show("Please go to the artist and record the artist's individual fees!");
             }
             else
             {

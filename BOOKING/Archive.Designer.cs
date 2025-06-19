@@ -30,6 +30,7 @@ namespace SilverTune.BOOKING
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Archive));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.upImgBtn = new System.Windows.Forms.Button();
@@ -58,50 +59,58 @@ namespace SilverTune.BOOKING
             this.paseOneDS = new SilverTune.paseOneDS();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.bOOKINGTableAdapter = new SilverTune.paseOneDSTableAdapters.BOOKINGTableAdapter();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bOOKINGBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paseOneDS)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1246, 629);
+            this.groupBox1.Size = new System.Drawing.Size(1399, 655);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Archive Booking";
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.upImgBtn);
-            this.groupBox3.Controls.Add(this.button3);
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.panel1);
             this.groupBox3.Controls.Add(this.txtAmount);
             this.groupBox3.Controls.Add(this.txtDate);
             this.groupBox3.Controls.Add(this.txtBookNo);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Location = new System.Drawing.Point(64, 358);
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBox3.Location = new System.Drawing.Point(64, 390);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1063, 259);
+            this.groupBox3.Size = new System.Drawing.Size(1287, 259);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Confirm Booking";
             // 
             // upImgBtn
             // 
-            this.upImgBtn.BackColor = System.Drawing.Color.Green;
+            this.upImgBtn.BackColor = System.Drawing.Color.Teal;
             this.upImgBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.upImgBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.upImgBtn.Location = new System.Drawing.Point(502, 183);
+            this.upImgBtn.Location = new System.Drawing.Point(404, 3);
             this.upImgBtn.Name = "upImgBtn";
             this.upImgBtn.Size = new System.Drawing.Size(249, 35);
             this.upImgBtn.TabIndex = 110;
@@ -114,7 +123,7 @@ namespace SilverTune.BOOKING
             this.button3.BackColor = System.Drawing.Color.White;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button3.Location = new System.Drawing.Point(247, 183);
+            this.button3.Location = new System.Drawing.Point(0, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(249, 35);
             this.button3.TabIndex = 109;
@@ -123,6 +132,8 @@ namespace SilverTune.BOOKING
             // 
             // txtAmount
             // 
+            this.txtAmount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAmount.Location = new System.Drawing.Point(426, 118);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(300, 32);
@@ -130,6 +141,8 @@ namespace SilverTune.BOOKING
             // 
             // txtDate
             // 
+            this.txtDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDate.Location = new System.Drawing.Point(426, 76);
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(300, 32);
@@ -137,6 +150,8 @@ namespace SilverTune.BOOKING
             // 
             // txtBookNo
             // 
+            this.txtBookNo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBookNo.Location = new System.Drawing.Point(426, 31);
             this.txtBookNo.Name = "txtBookNo";
             this.txtBookNo.Size = new System.Drawing.Size(300, 32);
@@ -171,12 +186,15 @@ namespace SilverTune.BOOKING
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.dataGridView2);
             this.groupBox2.Controls.Add(this.textBox11);
-            this.groupBox2.Location = new System.Drawing.Point(64, 31);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBox2.Location = new System.Drawing.Point(64, 51);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1063, 321);
+            this.groupBox2.Size = new System.Drawing.Size(1287, 321);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search Booking";
@@ -184,6 +202,7 @@ namespace SilverTune.BOOKING
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(148, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(282, 26);
@@ -192,7 +211,10 @@ namespace SilverTune.BOOKING
             // 
             // dataGridView2
             // 
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.bookingIDDataGridViewTextBoxColumn,
@@ -209,7 +231,7 @@ namespace SilverTune.BOOKING
             this.dataGridView2.DataSource = this.bOOKINGBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(70, 79);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(910, 226);
+            this.dataGridView2.Size = new System.Drawing.Size(1134, 226);
             this.dataGridView2.TabIndex = 90;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
@@ -302,11 +324,25 @@ namespace SilverTune.BOOKING
             // 
             this.bOOKINGTableAdapter.ClearBeforeFill = true;
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.upImgBtn);
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Location = new System.Drawing.Point(483, 191);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(653, 40);
+            this.panel1.TabIndex = 111;
+            // 
             // Archive
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1246, 629);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1394, 667);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Name = "Archive";
@@ -320,6 +356,7 @@ namespace SilverTune.BOOKING
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bOOKINGBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.paseOneDS)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -354,5 +391,6 @@ namespace SilverTune.BOOKING
         private System.Windows.Forms.DataGridViewTextBoxColumn bookingTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn bookingTotalAmountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn bookingStatusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -30,6 +30,7 @@ namespace SilverTune.CLIENT
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewClient));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtPhoneNo = new System.Windows.Forms.TextBox();
@@ -42,8 +43,6 @@ namespace SilverTune.CLIENT
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientFirstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientLastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +56,8 @@ namespace SilverTune.CLIENT
             this.clientStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cLIENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.paseOneDS = new SilverTune.paseOneDS();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.cLIENTTableAdapter = new SilverTune.paseOneDSTableAdapters.CLIENTTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -68,10 +69,12 @@ namespace SilverTune.CLIENT
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1260, 653);
@@ -81,6 +84,8 @@ namespace SilverTune.CLIENT
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.txtPhoneNo);
             this.groupBox3.Controls.Add(this.txtIdEmail);
             this.groupBox3.Controls.Add(this.txtSurn);
@@ -89,39 +94,48 @@ namespace SilverTune.CLIENT
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox3.Location = new System.Drawing.Point(64, 345);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1063, 272);
+            this.groupBox3.Size = new System.Drawing.Size(1133, 272);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = " Client Details";
             // 
             // txtPhoneNo
             // 
+            this.txtPhoneNo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPhoneNo.Location = new System.Drawing.Point(465, 191);
             this.txtPhoneNo.Name = "txtPhoneNo";
-            this.txtPhoneNo.Size = new System.Drawing.Size(300, 32);
+            this.txtPhoneNo.Size = new System.Drawing.Size(370, 32);
             this.txtPhoneNo.TabIndex = 105;
             // 
             // txtIdEmail
             // 
+            this.txtIdEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtIdEmail.Location = new System.Drawing.Point(465, 153);
             this.txtIdEmail.Name = "txtIdEmail";
-            this.txtIdEmail.Size = new System.Drawing.Size(300, 32);
+            this.txtIdEmail.Size = new System.Drawing.Size(370, 32);
             this.txtIdEmail.TabIndex = 103;
             // 
             // txtSurn
             // 
+            this.txtSurn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSurn.Location = new System.Drawing.Point(465, 111);
             this.txtSurn.Name = "txtSurn";
-            this.txtSurn.Size = new System.Drawing.Size(300, 32);
+            this.txtSurn.Size = new System.Drawing.Size(370, 32);
             this.txtSurn.TabIndex = 102;
             // 
             // txtName
             // 
+            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtName.Location = new System.Drawing.Point(465, 66);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(300, 32);
+            this.txtName.Size = new System.Drawing.Size(370, 32);
             this.txtName.TabIndex = 101;
             // 
             // label9
@@ -162,18 +176,23 @@ namespace SilverTune.CLIENT
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.dataGridView2);
             this.groupBox2.Controls.Add(this.textBox11);
             this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox2.Location = new System.Drawing.Point(64, 31);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1063, 308);
+            this.groupBox2.Size = new System.Drawing.Size(1133, 308);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search Client";
             // 
             // dataGridView2
             // 
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -191,26 +210,9 @@ namespace SilverTune.CLIENT
             this.dataGridView2.DataSource = this.cLIENTBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(105, 82);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(823, 190);
+            this.dataGridView2.Size = new System.Drawing.Size(893, 190);
             this.dataGridView2.TabIndex = 90;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(491, 31);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(395, 32);
-            this.textBox11.TabIndex = 88;
-            this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(132, 37);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(240, 26);
-            this.label14.TabIndex = 89;
-            this.label14.Text = "Search Client By Name";
             // 
             // clientIDDataGridViewTextBoxColumn
             // 
@@ -289,6 +291,23 @@ namespace SilverTune.CLIENT
             this.paseOneDS.DataSetName = "paseOneDS";
             this.paseOneDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(491, 31);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(395, 32);
+            this.textBox11.TabIndex = 88;
+            this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(132, 37);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(240, 26);
+            this.label14.TabIndex = 89;
+            this.label14.Text = "Search Client By Name";
+            // 
             // cLIENTTableAdapter
             // 
             this.cLIENTTableAdapter.ClearBeforeFill = true;
@@ -297,6 +316,8 @@ namespace SilverTune.CLIENT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1260, 653);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);

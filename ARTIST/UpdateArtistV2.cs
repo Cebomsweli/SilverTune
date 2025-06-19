@@ -41,15 +41,25 @@ namespace SilverTune.ARTIST
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
 
             // Set background and grid colors
-            dgv.BackgroundColor = Color.White;
+            // Set background and grid line colors
+            dgv.BackgroundColor = Color.FromArgb(64, 64, 64); // Entire grid background
             dgv.GridColor = Color.LightGray;
 
-            // Customize column headers
+            // Header style
             dgv.EnableHeadersVisualStyles = false;
-            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(54, 78, 114); // Deep blue
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(32, 32, 32); // Even darker for contrast
             dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
 
+            // Cell style
+            dgv.DefaultCellStyle.BackColor = Color.FromArgb(64, 64, 64);  // Cell background (ControlDarkDark)
+            dgv.DefaultCellStyle.ForeColor = Color.White;                 // White text
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(96, 96, 96); // Slightly lighter on selection
+            dgv.DefaultCellStyle.SelectionForeColor = Color.White;
+            dgv.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+
+            // Optional: Alternate row style (if needed)
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(70, 70, 70); // Slight variation for readability
             // Set default row style
             dgv.DefaultCellStyle.Font = new Font("Segoe UI", 10);
             dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(80, 120, 180);
@@ -172,11 +182,16 @@ namespace SilverTune.ARTIST
         }
 
         //Method to convvert the photo to bytes
-        public byte[] ConvertPhoto()
+        public byte[] ConvertPhoto(PictureBox pictureBox)
         {
-            MemoryStream stream = new MemoryStream();
-            pcArt.Image.Save(stream, pcArt.Image.RawFormat);
-            return stream.GetBuffer();
+            if (pictureBox.Image == null)
+                return null; // Or throw an exception if you prefer
+
+            using (MemoryStream stream = new MemoryStream())
+            {
+                pictureBox.Image.Save(stream, pictureBox.Image.RawFormat);
+                return stream.ToArray(); // Use ToArray() instead of GetBuffer()
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -486,7 +501,7 @@ namespace SilverTune.ARTIST
         private void button3_Click(object sender, EventArgs e)
         {
             //Updates Artists image.
-            ArtistImage = ConvertPhoto();
+            ArtistImage = ConvertPhoto(pcArt);
             if (pcArt.Image == null)
             {
                 MessageBox.Show("Please select or load an image before updating.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);

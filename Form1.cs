@@ -76,8 +76,7 @@ namespace SilverTune
 
         private void uPDATEARTISTToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ARTIST.UpdateArtistV2 updateArtist = new ARTIST.UpdateArtistV2();
-            FormSetup(updateArtist);
+           
         }
 
         private void aRCHIVEARTISTToolStripMenuItem_Click(object sender, EventArgs e)
@@ -153,6 +152,18 @@ namespace SilverTune
         {
             CLIENT.ViewClient viewClient = new CLIENT.ViewClient();
             FormSetup(viewClient);
+        }
+
+        private void rEPORTSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            REPORT.Reports reports = new REPORT.Reports();
+            FormSetup(reports);
+        }
+
+        private void uPDATEPERSONALINFOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ARTIST.UpdateArtistV2 updateArtist = new ARTIST.UpdateArtistV2();
+            FormSetup(updateArtist);
         }
     }
 }

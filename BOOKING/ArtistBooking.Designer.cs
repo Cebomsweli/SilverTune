@@ -30,18 +30,17 @@ namespace SilverTune.BOOKING
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArtistBooking));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.typeTxt = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.cliePhonTxt = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.clieSearchTxt = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -92,169 +91,65 @@ namespace SilverTune.BOOKING
             this.cLIENTTableAdapter = new SilverTune.paseOneDSTableAdapters.CLIENTTableAdapter();
             this.bookingTableAdapter = new SilverTune.paseOneDSTableAdapters.BOOKINGTableAdapter();
             this.artistfeesTableAdapter = new SilverTune.paseOneDSTableAdapters.ARTISTFEESTableAdapter();
-            this.panel1.SuspendLayout();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aRTISTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paseOneDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DimGray;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 733);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1404, 53);
-            this.panel1.TabIndex = 7;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
-            this.label15.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label15.Location = new System.Drawing.Point(493, 18);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(341, 26);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "@ SilverTune All Rights Reserved";
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.typeTxt);
-            this.groupBox1.Controls.Add(this.label25);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.cliePhonTxt);
-            this.groupBox1.Controls.Add(this.label19);
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.label24);
-            this.groupBox1.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.clieSearchTxt);
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Controls.Add(this.label23);
-            this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.dataGridView2);
-            this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.label22);
-            this.groupBox1.Controls.Add(this.locTxt);
             this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.clieEmailTxt);
-            this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.clieSurnTxt);
-            this.groupBox1.Controls.Add(this.typeText);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.clieNameTxt);
-            this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtTime);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.durCombo);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.typeCombo);
-            this.groupBox1.Controls.Add(this.eventDateTxt);
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox1.Location = new System.Drawing.Point(2, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1402, 720);
+            this.groupBox1.Size = new System.Drawing.Size(1403, 823);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Record Booking";
             // 
-            // typeTxt
+            // panel1
             // 
-            this.typeTxt.FormattingEnabled = true;
-            this.typeTxt.Items.AddRange(new object[] {
-            "Outdoor",
-            "Indoor"});
-            this.typeTxt.Location = new System.Drawing.Point(292, 199);
-            this.typeTxt.Name = "typeTxt";
-            this.typeTxt.Size = new System.Drawing.Size(283, 34);
-            this.typeTxt.TabIndex = 101;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.ForeColor = System.Drawing.Color.Red;
-            this.label25.Location = new System.Drawing.Point(571, 516);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(21, 26);
-            this.label25.TabIndex = 83;
-            this.label25.Text = "*";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(951, 25);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(395, 32);
-            this.textBox2.TabIndex = 81;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // cliePhonTxt
-            // 
-            this.cliePhonTxt.Location = new System.Drawing.Point(282, 551);
-            this.cliePhonTxt.Name = "cliePhonTxt";
-            this.cliePhonTxt.Size = new System.Drawing.Size(283, 32);
-            this.cliePhonTxt.TabIndex = 82;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.ForeColor = System.Drawing.Color.Red;
-            this.label19.Location = new System.Drawing.Point(580, 296);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(21, 26);
-            this.label19.TabIndex = 100;
-            this.label19.Text = "*";
-            this.label19.Click += new System.EventHandler(this.label19_Click);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(104, 551);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(115, 26);
-            this.label24.TabIndex = 81;
-            this.label24.Text = "Phone No.";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.button1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button2, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(420, 653);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(510, 41);
-            this.tableLayoutPanel1.TabIndex = 27;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Location = new System.Drawing.Point(646, 274);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(654, 45);
+            this.panel1.TabIndex = 112;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Green;
+            this.button1.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(258, 3);
+            this.button1.Location = new System.Drawing.Point(401, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(249, 35);
             this.button1.TabIndex = 29;
@@ -265,17 +160,75 @@ namespace SilverTune.BOOKING
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
-            this.button2.Location = new System.Drawing.Point(3, 3);
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button2.Location = new System.Drawing.Point(0, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(249, 35);
             this.button2.TabIndex = 28;
             this.button2.Text = "Clear";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // typeTxt
+            // 
+            this.typeTxt.FormattingEnabled = true;
+            this.typeTxt.Items.AddRange(new object[] {
+            "Outdoor",
+            "Indoor"});
+            this.typeTxt.Location = new System.Drawing.Point(228, 179);
+            this.typeTxt.Name = "typeTxt";
+            this.typeTxt.Size = new System.Drawing.Size(283, 34);
+            this.typeTxt.TabIndex = 101;
+            this.typeTxt.Text = "Outdoor";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.ForeColor = System.Drawing.Color.Red;
+            this.label25.Location = new System.Drawing.Point(517, 134);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(21, 26);
+            this.label25.TabIndex = 83;
+            this.label25.Text = "*";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(852, 41);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(395, 32);
+            this.textBox2.TabIndex = 81;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // cliePhonTxt
+            // 
+            this.cliePhonTxt.Location = new System.Drawing.Point(221, 175);
+            this.cliePhonTxt.Name = "cliePhonTxt";
+            this.cliePhonTxt.Size = new System.Drawing.Size(290, 32);
+            this.cliePhonTxt.TabIndex = 82;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.ForeColor = System.Drawing.Color.Red;
+            this.label19.Location = new System.Drawing.Point(524, 286);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(21, 26);
+            this.label19.TabIndex = 100;
+            this.label19.Text = "*";
+            this.label19.Click += new System.EventHandler(this.label19_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(91, 591);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(115, 26);
+            this.label24.TabIndex = 81;
+            this.label24.Text = "Phone No.";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(648, 28);
+            this.label2.Location = new System.Drawing.Point(549, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(297, 26);
             this.label2.TabIndex = 82;
@@ -284,7 +237,7 @@ namespace SilverTune.BOOKING
             // 
             // clieSearchTxt
             // 
-            this.clieSearchTxt.Location = new System.Drawing.Point(948, 388);
+            this.clieSearchTxt.Location = new System.Drawing.Point(878, 447);
             this.clieSearchTxt.Name = "clieSearchTxt";
             this.clieSearchTxt.Size = new System.Drawing.Size(395, 32);
             this.clieSearchTxt.TabIndex = 2;
@@ -292,6 +245,8 @@ namespace SilverTune.BOOKING
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -301,9 +256,9 @@ namespace SilverTune.BOOKING
             this.artistCountryNameDataGridViewTextBoxColumn,
             this.artistAvailabilityStatusDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.aRTISTBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(653, 63);
+            this.dataGridView1.Location = new System.Drawing.Point(554, 79);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(743, 186);
+            this.dataGridView1.Size = new System.Drawing.Size(708, 186);
             this.dataGridView1.TabIndex = 78;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -353,7 +308,7 @@ namespace SilverTune.BOOKING
             // 
             this.label23.AutoSize = true;
             this.label23.ForeColor = System.Drawing.Color.Red;
-            this.label23.Location = new System.Drawing.Point(568, 557);
+            this.label23.Location = new System.Drawing.Point(517, 181);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(21, 26);
             this.label23.TabIndex = 80;
@@ -362,7 +317,7 @@ namespace SilverTune.BOOKING
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(106, 165);
+            this.label17.Location = new System.Drawing.Point(42, 145);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(58, 26);
             this.label17.TabIndex = 79;
@@ -372,7 +327,7 @@ namespace SilverTune.BOOKING
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(645, 391);
+            this.label3.Location = new System.Drawing.Point(632, 447);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(240, 26);
             this.label3.TabIndex = 2;
@@ -381,6 +336,8 @@ namespace SilverTune.BOOKING
             // 
             // dataGridView2
             // 
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -391,9 +348,9 @@ namespace SilverTune.BOOKING
             this.clientEmailDataGridViewTextBoxColumn,
             this.clientStatusDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.cLIENTBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(650, 428);
+            this.dataGridView2.Location = new System.Drawing.Point(637, 484);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(746, 188);
+            this.dataGridView2.Size = new System.Drawing.Size(681, 188);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
@@ -443,7 +400,7 @@ namespace SilverTune.BOOKING
             // 
             this.label18.AutoSize = true;
             this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(581, 251);
+            this.label18.Location = new System.Drawing.Point(525, 241);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(21, 26);
             this.label18.TabIndex = 99;
@@ -454,7 +411,7 @@ namespace SilverTune.BOOKING
             // 
             this.label22.AutoSize = true;
             this.label22.ForeColor = System.Drawing.Color.Red;
-            this.label22.Location = new System.Drawing.Point(568, 466);
+            this.label22.Location = new System.Drawing.Point(568, 506);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(21, 26);
             this.label22.TabIndex = 79;
@@ -462,7 +419,7 @@ namespace SilverTune.BOOKING
             // 
             // locTxt
             // 
-            this.locTxt.Location = new System.Drawing.Point(290, 126);
+            this.locTxt.Location = new System.Drawing.Point(226, 106);
             this.locTxt.Name = "locTxt";
             this.locTxt.Size = new System.Drawing.Size(283, 32);
             this.locTxt.TabIndex = 80;
@@ -472,7 +429,7 @@ namespace SilverTune.BOOKING
             // 
             this.label21.AutoSize = true;
             this.label21.ForeColor = System.Drawing.Color.Red;
-            this.label21.Location = new System.Drawing.Point(568, 425);
+            this.label21.Location = new System.Drawing.Point(568, 465);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(21, 26);
             this.label21.TabIndex = 78;
@@ -482,7 +439,7 @@ namespace SilverTune.BOOKING
             // 
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(581, 205);
+            this.label14.Location = new System.Drawing.Point(525, 195);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(21, 26);
             this.label14.TabIndex = 98;
@@ -492,7 +449,7 @@ namespace SilverTune.BOOKING
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(106, 428);
+            this.label9.Location = new System.Drawing.Point(93, 468);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(71, 26);
             this.label9.TabIndex = 18;
@@ -500,7 +457,7 @@ namespace SilverTune.BOOKING
             // 
             // clieEmailTxt
             // 
-            this.clieEmailTxt.Location = new System.Drawing.Point(282, 513);
+            this.clieEmailTxt.Location = new System.Drawing.Point(277, 553);
             this.clieEmailTxt.Name = "clieEmailTxt";
             this.clieEmailTxt.Size = new System.Drawing.Size(283, 32);
             this.clieEmailTxt.TabIndex = 9;
@@ -509,7 +466,7 @@ namespace SilverTune.BOOKING
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(579, 123);
+            this.label13.Location = new System.Drawing.Point(523, 113);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(21, 26);
             this.label13.TabIndex = 97;
@@ -518,14 +475,14 @@ namespace SilverTune.BOOKING
             // 
             // clieSurnTxt
             // 
-            this.clieSurnTxt.Location = new System.Drawing.Point(279, 469);
+            this.clieSurnTxt.Location = new System.Drawing.Point(277, 509);
             this.clieSurnTxt.Name = "clieSurnTxt";
-            this.clieSurnTxt.Size = new System.Drawing.Size(283, 32);
+            this.clieSurnTxt.Size = new System.Drawing.Size(285, 32);
             this.clieSurnTxt.TabIndex = 8;
             // 
             // typeText
             // 
-            this.typeText.Location = new System.Drawing.Point(292, 338);
+            this.typeText.Location = new System.Drawing.Point(228, 318);
             this.typeText.Name = "typeText";
             this.typeText.Size = new System.Drawing.Size(283, 32);
             this.typeText.TabIndex = 84;
@@ -536,7 +493,7 @@ namespace SilverTune.BOOKING
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(104, 513);
+            this.label11.Location = new System.Drawing.Point(91, 553);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(68, 26);
             this.label11.TabIndex = 20;
@@ -546,7 +503,7 @@ namespace SilverTune.BOOKING
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(578, 89);
+            this.label12.Location = new System.Drawing.Point(522, 79);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(21, 26);
             this.label12.TabIndex = 96;
@@ -555,7 +512,7 @@ namespace SilverTune.BOOKING
             // 
             // clieNameTxt
             // 
-            this.clieNameTxt.Location = new System.Drawing.Point(279, 422);
+            this.clieNameTxt.Location = new System.Drawing.Point(279, 462);
             this.clieNameTxt.Name = "clieNameTxt";
             this.clieNameTxt.Size = new System.Drawing.Size(283, 32);
             this.clieNameTxt.TabIndex = 7;
@@ -563,7 +520,7 @@ namespace SilverTune.BOOKING
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(104, 126);
+            this.label16.Location = new System.Drawing.Point(40, 106);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(94, 26);
             this.label16.TabIndex = 85;
@@ -573,7 +530,7 @@ namespace SilverTune.BOOKING
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(106, 472);
+            this.label10.Location = new System.Drawing.Point(93, 512);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(101, 26);
             this.label10.TabIndex = 19;
@@ -584,7 +541,7 @@ namespace SilverTune.BOOKING
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(581, 165);
+            this.label7.Location = new System.Drawing.Point(525, 155);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(21, 26);
             this.label7.TabIndex = 95;
@@ -594,7 +551,7 @@ namespace SilverTune.BOOKING
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(106, 202);
+            this.label5.Location = new System.Drawing.Point(42, 182);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(128, 26);
             this.label5.TabIndex = 86;
@@ -604,7 +561,7 @@ namespace SilverTune.BOOKING
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(104, 89);
+            this.label1.Location = new System.Drawing.Point(40, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 26);
             this.label1.TabIndex = 94;
@@ -614,7 +571,7 @@ namespace SilverTune.BOOKING
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(106, 243);
+            this.label6.Location = new System.Drawing.Point(42, 223);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(94, 26);
             this.label6.TabIndex = 87;
@@ -626,7 +583,7 @@ namespace SilverTune.BOOKING
             this.txtTime.CalendarFont = new System.Drawing.Font("Times New Roman", 16F);
             this.txtTime.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.txtTime.Location = new System.Drawing.Point(290, 89);
+            this.txtTime.Location = new System.Drawing.Point(226, 69);
             this.txtTime.Margin = new System.Windows.Forms.Padding(2);
             this.txtTime.Name = "txtTime";
             this.txtTime.ShowUpDown = true;
@@ -638,7 +595,7 @@ namespace SilverTune.BOOKING
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(106, 291);
+            this.label8.Location = new System.Drawing.Point(42, 271);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(150, 26);
             this.label8.TabIndex = 88;
@@ -657,16 +614,17 @@ namespace SilverTune.BOOKING
             "6",
             "7",
             "8"});
-            this.durCombo.Location = new System.Drawing.Point(292, 243);
+            this.durCombo.Location = new System.Drawing.Point(228, 223);
             this.durCombo.Name = "durCombo";
             this.durCombo.Size = new System.Drawing.Size(283, 34);
             this.durCombo.TabIndex = 92;
+            this.durCombo.Text = "1";
             this.durCombo.SelectedIndexChanged += new System.EventHandler(this.durCombo_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(287, 41);
+            this.label4.Location = new System.Drawing.Point(225, 28);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(210, 26);
             this.label4.TabIndex = 89;
@@ -679,10 +637,11 @@ namespace SilverTune.BOOKING
             this.typeCombo.Items.AddRange(new object[] {
             "Individual",
             "Organisation"});
-            this.typeCombo.Location = new System.Drawing.Point(292, 288);
+            this.typeCombo.Location = new System.Drawing.Point(228, 268);
             this.typeCombo.Name = "typeCombo";
             this.typeCombo.Size = new System.Drawing.Size(283, 34);
             this.typeCombo.TabIndex = 90;
+            this.typeCombo.Text = "Individual";
             this.typeCombo.SelectedIndexChanged += new System.EventHandler(this.typeCombo_SelectedIndexChanged_1);
             // 
             // eventDateTxt
@@ -690,7 +649,7 @@ namespace SilverTune.BOOKING
             this.eventDateTxt.CalendarFont = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eventDateTxt.CalendarMonthBackground = System.Drawing.SystemColors.ButtonHighlight;
             this.eventDateTxt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventDateTxt.Location = new System.Drawing.Point(292, 165);
+            this.eventDateTxt.Location = new System.Drawing.Point(228, 145);
             this.eventDateTxt.Margin = new System.Windows.Forms.Padding(2);
             this.eventDateTxt.Name = "eventDateTxt";
             this.eventDateTxt.Size = new System.Drawing.Size(283, 26);
@@ -713,36 +672,88 @@ namespace SilverTune.BOOKING
             // 
             this.artistfeesTableAdapter.ClearBeforeFill = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.typeTxt);
+            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.label19);
+            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txtTime);
+            this.groupBox2.Controls.Add(this.eventDateTxt);
+            this.groupBox2.Controls.Add(this.typeCombo);
+            this.groupBox2.Controls.Add(this.durCombo);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label18);
+            this.groupBox2.Controls.Add(this.label17);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.typeText);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.locTxt);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBox2.Location = new System.Drawing.Point(49, 39);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1311, 367);
+            this.groupBox2.TabIndex = 113;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Select Artist";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.label25);
+            this.groupBox3.Controls.Add(this.panel1);
+            this.groupBox3.Controls.Add(this.cliePhonTxt);
+            this.groupBox3.Controls.Add(this.label23);
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBox3.Location = new System.Drawing.Point(49, 422);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1318, 336);
+            this.groupBox3.TabIndex = 114;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Select Client";
+            // 
             // ArtistBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1404, 786);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1405, 834);
             this.ControlBox = false;
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "ArtistBooking";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ArtistBooking";
             this.Load += new System.EventHandler(this.ArtistBooking_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aRTISTBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.paseOneDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label19;
@@ -769,7 +780,6 @@ namespace SilverTune.BOOKING
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox cliePhonTxt;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox clieSearchTxt;
@@ -803,5 +813,8 @@ namespace SilverTune.BOOKING
         private paseOneDSTableAdapters.BOOKINGTableAdapter bookingTableAdapter;
         private paseOneDSTableAdapters.ARTISTFEESTableAdapter artistfeesTableAdapter;
         private System.Windows.Forms.ComboBox typeTxt;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

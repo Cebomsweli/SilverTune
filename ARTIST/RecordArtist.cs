@@ -13,6 +13,9 @@ namespace SilverTune.ARTIST
 {
     public partial class RecordArtist : Form
     {
+
+        //Object 
+        ErrorHandler errorHandler = new ErrorHandler();
         //My fields
         public string ArtistFirstName { get; set; }
         public string ArtistLastName { get; set; }
@@ -62,46 +65,116 @@ namespace SilverTune.ARTIST
         private void button1_Click(object sender, EventArgs e)
         {
 
-            //Assigning data to be stored to defined fields
-            ArtistFirstName = artNameTxt.Text;
-            ArtistLastName =artSurnTxt.Text;
-            ArtistStageName =artStageNameTxt.Text;
-            ArtistEmail =artEmailTxt.Text;
-            ArtistIdentityNo =artIdNoTxt.Text;
-            ArtistPhoneNumber =ArtPhoneNoTxt.Text;
-            ArtistGenre =artGenTxt.Text;
-            ArtistStreetName =artStreetNameTxt.Text;
-            ArtistStreetNumber = Convert.ToInt32(artStreetNoTxt.Text);
-            ArtistCityName = artCityTxt.Text;
-            ArtistCountryName =artCountTxt.Text;
-            AristPostalCode = Convert.ToInt32(artPostCodeTxt.Text);
-            ArtistImage =ConvertPhoto();
-            ArtistAvailabilityStatus = "Verified";
-
-
-            DialogResult result = MessageBox.Show(
-                                                    "Are you sure you want to save this artist's information?",
-                                                    "Confirm Save",
-                                                    MessageBoxButtons.YesNo,
-                                                    MessageBoxIcon.Question
-                                                );
-
-            if (result == DialogResult.Yes)
+            //Verify the the textboxes
+            if (!errorHandler.IsValidName(artNameTxt.Text))
             {
-                artistTableAdapter.Insert(ArtistFirstName, ArtistLastName, ArtistStageName, ArtistEmail, ArtistIdentityNo, ArtistPhoneNumber, ArtistGenre,
-                    ArtistStreetName, ArtistStreetNumber, ArtistCityName, ArtistCountryName, AristPostalCode, ArtistImage, ArtistAvailabilityStatus);
-                MessageBox.Show(
-                                    "Artist saved successfully.\n\nNext step: Please go to the 'Record Artist Fees' section to complete the artist profile.",
-                                    "Next Step",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information
-                                );
+                MessageBox.Show("Please Enter The Valid Name!");
+            }
+            else if (!errorHandler.IsValidName(artSurnTxt.Text))
+            {
+                MessageBox.Show("Please Enter The Valid surname!");
+            }
+            else if (!errorHandler.IsValidName(artStageNameTxt.Text))
+            {
+                MessageBox.Show("Please Enter The Valid stage name!");
+            }
+            else if (!errorHandler.ValidateEmail(artEmailTxt.Text))
+            {
+                MessageBox.Show("Please Enter The Valid email!");
+            }
+            else if (!errorHandler.IsValidPhoneNumber(ArtPhoneNoTxt.Text))
+            {
+                MessageBox.Show("Please Enter The Valid phone number!");
+            }
+            else if (!errorHandler.IsValidIDNumber(artIdNoTxt.Text))
+            {
+                MessageBox.Show("Please Enter The Valid id number!");
+            }
+            else if (txtImg.Text== null )
+            {
+                MessageBox.Show("Please select the image!");
+            }
+            else if (artStreetNameTxt.Text == null || !errorHandler.IsValidName(artStreetNameTxt.Text))
+            {
+                MessageBox.Show("Please Enter The street name (e.g Dunstaple Height)!");
+
+            }
+            else if (artStreetNoTxt.Text == null || !errorHandler.isNumber(artStreetNoTxt.Text))
+            {
+                MessageBox.Show("Please Enter The Valid street number (e.g 123)!");
+
+            }
+            else if (artCityTxt.Text == null || !errorHandler.IsValidName(artCityTxt.Text))
+            {
+                MessageBox.Show("Please Enter The Valid city name (e.g Durban)!");
+            }
+
+            else if (artCountTxt.Text == null || !errorHandler.IsValidName(artCountTxt.Text))
+            {
+                MessageBox.Show("Please Enter The Valid Country (e.g South Africa)!");
+            }
+
+            
+
+            else if (artPostCodeTxt.Text == null || !errorHandler.isNumber(artPostCodeTxt.Text))
+            {
+                MessageBox.Show("Please Enter The Valid postal code (e.g 4000)!");
+            }
+
+            else if (artStreetNoTxt.Text ==null)
+            {
+                MessageBox.Show("Enter the Valid Street number (e.g 123)");
+            }
+            else if (artistTableAdapter.CountExistingArtist(artStageNameTxt.Text, artEmailTxt.Text) >0)
+            {
+                MessageBox.Show("The Artist is already existing, you may proceed to booking!");
             }
             else
             {
-                // Optionally notify user that action was cancelled
-                MessageBox.Show("Artist record was not saved.", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //Assigning data to be stored to defined fields
+                ArtistFirstName = artNameTxt.Text;
+                ArtistLastName = artSurnTxt.Text;
+                ArtistStageName = artStageNameTxt.Text;
+                ArtistEmail = artEmailTxt.Text;
+                ArtistIdentityNo = artIdNoTxt.Text;
+                ArtistPhoneNumber = ArtPhoneNoTxt.Text;
+                ArtistGenre = artGenTxt.Text;
+                ArtistStreetName = artStreetNameTxt.Text;
+                ArtistStreetNumber = Convert.ToInt32(artStreetNoTxt.Text);
+                AristPostalCode = Convert.ToInt32(artPostCodeTxt.Text);
+                ArtistCityName = artCityTxt.Text;
+                ArtistCountryName = artCountTxt.Text;
+                ArtistImage = ConvertPhoto();
+                ArtistAvailabilityStatus = "Verified";
+
+
+
+                DialogResult result = MessageBox.Show(
+                                                        "Are you sure you want to save this artist's information?",
+                                                        "Confirm Save",
+                                                        MessageBoxButtons.YesNo,
+                                                        MessageBoxIcon.Question
+                                                    );
+
+                if (result == DialogResult.Yes)
+                {
+                    artistTableAdapter.Insert(ArtistFirstName, ArtistLastName, ArtistStageName, ArtistEmail, ArtistIdentityNo, ArtistPhoneNumber, ArtistGenre,
+                        ArtistStreetName, ArtistStreetNumber, ArtistCityName, ArtistCountryName, AristPostalCode, ArtistImage, ArtistAvailabilityStatus);
+                    MessageBox.Show(
+                                        "Artist saved successfully.\n\nNext step: Please go to the 'Record Artist Fees' section to complete the artist profile.",
+                                        "Next Step",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information
+                                    );
+                }
+                else
+                {
+                    // Optionally notify user that action was cancelled
+                    MessageBox.Show("Artist record was not saved.", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
+
+            
         }
     }
 }

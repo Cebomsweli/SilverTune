@@ -60,6 +60,24 @@
     <Reference Include="Microsoft.Extensions.Primitives, Version=9.0.0.6, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Extensions.Primitives.9.0.6\lib\net462\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
@@ -109,12 +127,6 @@
     <Compile Include="ARTIST\ArchiveArtist.Designer.cs">
       <DependentUpon>ArchiveArtist.cs</DependentUpon>
     </Compile>
-    <Compile Include="ARTIST\ArchiveStatus.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ARTIST\ArchiveStatus.Designer.cs">
-      <DependentUpon>ArchiveStatus.cs</DependentUpon>
-    </Compile>
     <Compile Include="ARTIST\RecordArtist.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,29 +139,23 @@
     <Compile Include="ARTIST\RecordCarges.Designer.cs">
       <DependentUpon>RecordCarges.cs</DependentUpon>
     </Compile>
-    <Compile Include="ARTIST\UpdateArtist.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ARTIST\UpdateArtist.Designer.cs">
-      <DependentUpon>UpdateArtist.cs</DependentUpon>
-    </Compile>
     <Compile Include="ARTIST\UpdateArtistV2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ARTIST\UpdateArtistV2.Designer.cs">
       <DependentUpon>UpdateArtistV2.cs</DependentUpon>
     </Compile>
+    <Compile Include="ARTIST\UpdateFees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ARTIST\UpdateFees.Designer.cs">
+      <DependentUpon>UpdateFees.cs</DependentUpon>
+    </Compile>
     <Compile Include="ARTIST\ViewArchived.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ARTIST\ViewArchived.Designer.cs">
       <DependentUpon>ViewArchived.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ARTIST\ViewArtist.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ARTIST\ViewArtist.Designer.cs">
-      <DependentUpon>ViewArtist.cs</DependentUpon>
     </Compile>
     <Compile Include="ARTIST\ViewVerified.cs">
       <SubType>Form</SubType>
@@ -211,6 +217,7 @@
     <Compile Include="CLIENT\ViewClient.Designer.cs">
       <DependentUpon>ViewClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="ErrorHandler.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,11 +247,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="REPORT\Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORT\Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
     <EmbeddedResource Include="ARTIST\ArchiveArtist.resx">
       <DependentUpon>ArchiveArtist.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ARTIST\ArchiveStatus.resx">
-      <DependentUpon>ArchiveStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ARTIST\RecordArtist.resx">
       <DependentUpon>RecordArtist.cs</DependentUpon>
@@ -252,17 +264,14 @@
     <EmbeddedResource Include="ARTIST\RecordCarges.resx">
       <DependentUpon>RecordCarges.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ARTIST\UpdateArtist.resx">
-      <DependentUpon>UpdateArtist.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ARTIST\UpdateArtistV2.resx">
       <DependentUpon>UpdateArtistV2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ARTIST\UpdateFees.resx">
+      <DependentUpon>UpdateFees.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ARTIST\ViewArchived.resx">
       <DependentUpon>ViewArchived.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ARTIST\ViewArtist.resx">
-      <DependentUpon>ViewArtist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ARTIST\ViewVerified.resx">
       <DependentUpon>ViewVerified.cs</DependentUpon>
@@ -316,6 +325,10 @@
     <Content Include="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="REPORT\ArtistBookingReport.rdlc" />
+    <EmbeddedResource Include="REPORT\Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="paseOneDS.xsc">
       <DependentUpon>paseOneDS.xsd</DependentUpon>
@@ -341,5 +354,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -30,8 +30,11 @@ namespace SilverTune.ARTIST
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateArtistV2));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.txtImg = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.txtPostCode = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,11 +61,6 @@ namespace SilverTune.ARTIST
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtImg = new System.Windows.Forms.TextBox();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.button3 = new System.Windows.Forms.Button();
             this.artistIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artistFirstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artistLastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,6 +78,9 @@ namespace SilverTune.ARTIST
             this.artistAvailabilityStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aRTISTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.paseOneDS = new SilverTune.paseOneDS();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.aRTISTTableAdapter = new SilverTune.paseOneDSTableAdapters.ARTISTTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -92,19 +93,23 @@ namespace SilverTune.ARTIST
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1368, 767);
+            this.groupBox1.Size = new System.Drawing.Size(1440, 795);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Update Artist";
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.Controls.Add(this.txtImg);
             this.groupBox3.Controls.Add(this.button7);
@@ -131,19 +136,43 @@ namespace SilverTune.ARTIST
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.pcArt);
             this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox3.Location = new System.Drawing.Point(64, 356);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1214, 399);
+            this.groupBox3.Size = new System.Drawing.Size(1286, 399);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Update Artist Details";
             // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
+            this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button3.Location = new System.Drawing.Point(968, 329);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(249, 35);
+            this.button3.TabIndex = 134;
+            this.button3.Text = "Update Picture";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // txtImg
+            // 
+            this.txtImg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtImg.Location = new System.Drawing.Point(950, 288);
+            this.txtImg.Name = "txtImg";
+            this.txtImg.Size = new System.Drawing.Size(155, 32);
+            this.txtImg.TabIndex = 133;
+            // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.Color.Green;
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button7.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.button7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button7.Location = new System.Drawing.Point(522, 303);
+            this.button7.Location = new System.Drawing.Point(584, 321);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(249, 35);
             this.button7.TabIndex = 132;
@@ -153,7 +182,9 @@ namespace SilverTune.ARTIST
             // 
             // txtPostCode
             // 
-            this.txtPostCode.Location = new System.Drawing.Point(198, 300);
+            this.txtPostCode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPostCode.Location = new System.Drawing.Point(260, 318);
             this.txtPostCode.Name = "txtPostCode";
             this.txtPostCode.Size = new System.Drawing.Size(300, 32);
             this.txtPostCode.TabIndex = 131;
@@ -161,7 +192,7 @@ namespace SilverTune.ARTIST
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 306);
+            this.label2.Location = new System.Drawing.Point(101, 324);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 26);
             this.label2.TabIndex = 130;
@@ -169,10 +200,11 @@ namespace SilverTune.ARTIST
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.Green;
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button6.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.button6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button6.Location = new System.Drawing.Point(522, 255);
+            this.button6.Location = new System.Drawing.Point(581, 276);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(249, 35);
             this.button6.TabIndex = 129;
@@ -182,7 +214,9 @@ namespace SilverTune.ARTIST
             // 
             // txtCountry
             // 
-            this.txtCountry.Location = new System.Drawing.Point(198, 258);
+            this.txtCountry.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCountry.Location = new System.Drawing.Point(260, 276);
             this.txtCountry.Name = "txtCountry";
             this.txtCountry.Size = new System.Drawing.Size(300, 32);
             this.txtCountry.TabIndex = 128;
@@ -190,7 +224,7 @@ namespace SilverTune.ARTIST
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 261);
+            this.label1.Location = new System.Drawing.Point(101, 279);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 26);
             this.label1.TabIndex = 127;
@@ -198,12 +232,13 @@ namespace SilverTune.ARTIST
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Green;
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(1049, 270);
+            this.button1.Location = new System.Drawing.Point(1111, 288);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 35);
+            this.button1.Size = new System.Drawing.Size(118, 35);
             this.button1.TabIndex = 126;
             this.button1.Text = "browse";
             this.button1.UseVisualStyleBackColor = false;
@@ -211,10 +246,11 @@ namespace SilverTune.ARTIST
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.Green;
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.button5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button5.Location = new System.Drawing.Point(519, 216);
+            this.button5.Location = new System.Drawing.Point(581, 234);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(249, 35);
             this.button5.TabIndex = 125;
@@ -224,10 +260,11 @@ namespace SilverTune.ARTIST
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.Green;
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.button4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button4.Location = new System.Drawing.Point(519, 168);
+            this.button4.Location = new System.Drawing.Point(581, 186);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(249, 35);
             this.button4.TabIndex = 124;
@@ -237,10 +274,11 @@ namespace SilverTune.ARTIST
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Green;
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(519, 124);
+            this.button2.Location = new System.Drawing.Point(581, 142);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(249, 35);
             this.button2.TabIndex = 123;
@@ -250,10 +288,11 @@ namespace SilverTune.ARTIST
             // 
             // button8
             // 
-            this.button8.BackColor = System.Drawing.Color.Green;
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button8.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.button8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button8.Location = new System.Drawing.Point(519, 76);
+            this.button8.Location = new System.Drawing.Point(581, 94);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(249, 35);
             this.button8.TabIndex = 122;
@@ -263,10 +302,11 @@ namespace SilverTune.ARTIST
             // 
             // button9
             // 
-            this.button9.BackColor = System.Drawing.Color.Green;
+            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button9.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.button9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button9.Location = new System.Drawing.Point(519, 31);
+            this.button9.Location = new System.Drawing.Point(581, 49);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(249, 35);
             this.button9.TabIndex = 121;
@@ -276,8 +316,9 @@ namespace SilverTune.ARTIST
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(939, 22);
+            this.label8.Location = new System.Drawing.Point(1001, 40);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(129, 26);
             this.label8.TabIndex = 120;
@@ -285,35 +326,45 @@ namespace SilverTune.ARTIST
             // 
             // txtCity
             // 
-            this.txtCity.Location = new System.Drawing.Point(198, 216);
+            this.txtCity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCity.Location = new System.Drawing.Point(260, 234);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(300, 32);
             this.txtCity.TabIndex = 119;
             // 
             // txtStreetNumber
             // 
-            this.txtStreetNumber.Location = new System.Drawing.Point(198, 171);
+            this.txtStreetNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtStreetNumber.Location = new System.Drawing.Point(260, 189);
             this.txtStreetNumber.Name = "txtStreetNumber";
             this.txtStreetNumber.Size = new System.Drawing.Size(300, 32);
             this.txtStreetNumber.TabIndex = 118;
             // 
             // txtStreetName
             // 
-            this.txtStreetName.Location = new System.Drawing.Point(198, 121);
+            this.txtStreetName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtStreetName.Location = new System.Drawing.Point(260, 139);
             this.txtStreetName.Name = "txtStreetName";
             this.txtStreetName.Size = new System.Drawing.Size(300, 32);
             this.txtStreetName.TabIndex = 117;
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(198, 79);
+            this.txtPhone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPhone.Location = new System.Drawing.Point(260, 97);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(300, 32);
             this.txtPhone.TabIndex = 116;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(198, 34);
+            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEmail.Location = new System.Drawing.Point(260, 52);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(300, 32);
             this.txtEmail.TabIndex = 115;
@@ -321,7 +372,7 @@ namespace SilverTune.ARTIST
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(36, 222);
+            this.label9.Location = new System.Drawing.Point(98, 240);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(50, 26);
             this.label9.TabIndex = 114;
@@ -330,7 +381,7 @@ namespace SilverTune.ARTIST
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(39, 174);
+            this.label10.Location = new System.Drawing.Point(101, 192);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(154, 26);
             this.label10.TabIndex = 113;
@@ -339,7 +390,7 @@ namespace SilverTune.ARTIST
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(39, 124);
+            this.label11.Location = new System.Drawing.Point(101, 142);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(135, 26);
             this.label11.TabIndex = 112;
@@ -348,7 +399,7 @@ namespace SilverTune.ARTIST
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(36, 79);
+            this.label12.Location = new System.Drawing.Point(98, 97);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(149, 26);
             this.label12.TabIndex = 111;
@@ -356,17 +407,17 @@ namespace SilverTune.ARTIST
             // 
             // pcArt
             // 
-            this.pcArt.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pcArt.Location = new System.Drawing.Point(869, 51);
+            this.pcArt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pcArt.Location = new System.Drawing.Point(950, 69);
             this.pcArt.Name = "pcArt";
-            this.pcArt.Size = new System.Drawing.Size(309, 200);
+            this.pcArt.Size = new System.Drawing.Size(279, 200);
             this.pcArt.TabIndex = 110;
             this.pcArt.TabStop = false;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(36, 37);
+            this.label13.Location = new System.Drawing.Point(98, 55);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(68, 26);
             this.label13.TabIndex = 109;
@@ -374,18 +425,23 @@ namespace SilverTune.ARTIST
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.dataGridView2);
             this.groupBox2.Controls.Add(this.textBox11);
             this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox2.Location = new System.Drawing.Point(64, 31);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1214, 319);
+            this.groupBox2.Size = new System.Drawing.Size(1286, 319);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search Artist";
             // 
             // dataGridView2
             // 
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -407,50 +463,9 @@ namespace SilverTune.ARTIST
             this.dataGridView2.DataSource = this.aRTISTBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(95, 82);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1004, 190);
+            this.dataGridView2.Size = new System.Drawing.Size(1076, 190);
             this.dataGridView2.TabIndex = 90;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(493, 31);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(395, 32);
-            this.textBox11.TabIndex = 88;
-            this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(134, 37);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(297, 26);
-            this.label14.TabIndex = 89;
-            this.label14.Text = "Search Artist By Stage Name";
-            // 
-            // txtImg
-            // 
-            this.txtImg.Location = new System.Drawing.Point(869, 270);
-            this.txtImg.Name = "txtImg";
-            this.txtImg.Size = new System.Drawing.Size(174, 32);
-            this.txtImg.TabIndex = 133;
-            // 
-            // openFileDialog
-            // 
-            this.openFileDialog.FileName = "openFileDialog";
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Green;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button3.Location = new System.Drawing.Point(918, 320);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(249, 35);
-            this.button3.TabIndex = 134;
-            this.button3.Text = "Update Picture";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // artistIDDataGridViewTextBoxColumn
             // 
@@ -553,6 +568,27 @@ namespace SilverTune.ARTIST
             this.paseOneDS.DataSetName = "paseOneDS";
             this.paseOneDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(493, 31);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(395, 32);
+            this.textBox11.TabIndex = 88;
+            this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(134, 37);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(297, 26);
+            this.label14.TabIndex = 89;
+            this.label14.Text = "Search Artist By Stage Name";
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog";
+            // 
             // aRTISTTableAdapter
             // 
             this.aRTISTTableAdapter.ClearBeforeFill = true;
@@ -561,7 +597,9 @@ namespace SilverTune.ARTIST
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1368, 767);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1440, 795);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Name = "UpdateArtistV2";

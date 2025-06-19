@@ -30,8 +30,8 @@ namespace SilverTune.CLIENT
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateClient));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.upImgBtn = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button7 = new System.Windows.Forms.Button();
             this.txtPostCode = new System.Windows.Forms.TextBox();
@@ -54,7 +54,6 @@ namespace SilverTune.CLIENT
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,33 +82,24 @@ namespace SilverTune.CLIENT
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.upImgBtn);
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1318, 780);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Update Client";
-            // 
-            // upImgBtn
-            // 
-            this.upImgBtn.BackColor = System.Drawing.Color.Green;
-            this.upImgBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
-            this.upImgBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.upImgBtn.Location = new System.Drawing.Point(580, 719);
-            this.upImgBtn.Name = "upImgBtn";
-            this.upImgBtn.Size = new System.Drawing.Size(249, 35);
-            this.upImgBtn.TabIndex = 110;
-            this.upImgBtn.Text = "Archive Artist";
-            this.upImgBtn.UseVisualStyleBackColor = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.button7);
             this.groupBox3.Controls.Add(this.txtPostCode);
             this.groupBox3.Controls.Add(this.label2);
@@ -131,6 +121,7 @@ namespace SilverTune.CLIENT
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox3.Location = new System.Drawing.Point(64, 356);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(1112, 357);
@@ -140,10 +131,11 @@ namespace SilverTune.CLIENT
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.Color.Green;
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button7.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.button7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button7.Location = new System.Drawing.Point(649, 312);
+            this.button7.Location = new System.Drawing.Point(745, 299);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(249, 35);
             this.button7.TabIndex = 129;
@@ -153,7 +145,9 @@ namespace SilverTune.CLIENT
             // 
             // txtPostCode
             // 
-            this.txtPostCode.Location = new System.Drawing.Point(325, 312);
+            this.txtPostCode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPostCode.Location = new System.Drawing.Point(367, 302);
             this.txtPostCode.Name = "txtPostCode";
             this.txtPostCode.Size = new System.Drawing.Size(300, 32);
             this.txtPostCode.TabIndex = 128;
@@ -161,7 +155,7 @@ namespace SilverTune.CLIENT
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(166, 318);
+            this.label2.Location = new System.Drawing.Point(153, 308);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 26);
             this.label2.TabIndex = 127;
@@ -169,10 +163,11 @@ namespace SilverTune.CLIENT
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.Green;
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button6.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.button6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button6.Location = new System.Drawing.Point(649, 267);
+            this.button6.Location = new System.Drawing.Point(745, 260);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(249, 35);
             this.button6.TabIndex = 126;
@@ -182,7 +177,9 @@ namespace SilverTune.CLIENT
             // 
             // txtCountry
             // 
-            this.txtCountry.Location = new System.Drawing.Point(325, 270);
+            this.txtCountry.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCountry.Location = new System.Drawing.Point(367, 260);
             this.txtCountry.Name = "txtCountry";
             this.txtCountry.Size = new System.Drawing.Size(300, 32);
             this.txtCountry.TabIndex = 125;
@@ -190,7 +187,7 @@ namespace SilverTune.CLIENT
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(166, 273);
+            this.label1.Location = new System.Drawing.Point(153, 263);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 26);
             this.label1.TabIndex = 124;
@@ -198,10 +195,11 @@ namespace SilverTune.CLIENT
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.Green;
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.button5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button5.Location = new System.Drawing.Point(646, 228);
+            this.button5.Location = new System.Drawing.Point(742, 215);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(249, 35);
             this.button5.TabIndex = 123;
@@ -211,10 +209,11 @@ namespace SilverTune.CLIENT
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.Green;
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.button4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button4.Location = new System.Drawing.Point(646, 180);
+            this.button4.Location = new System.Drawing.Point(742, 164);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(249, 35);
             this.button4.TabIndex = 122;
@@ -224,10 +223,11 @@ namespace SilverTune.CLIENT
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Green;
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(646, 136);
+            this.button1.Location = new System.Drawing.Point(742, 117);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(249, 35);
             this.button1.TabIndex = 121;
@@ -237,10 +237,11 @@ namespace SilverTune.CLIENT
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Green;
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(646, 88);
+            this.button2.Location = new System.Drawing.Point(742, 69);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(249, 35);
             this.button2.TabIndex = 120;
@@ -250,10 +251,11 @@ namespace SilverTune.CLIENT
             // 
             // button8
             // 
-            this.button8.BackColor = System.Drawing.Color.Green;
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button8.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.button8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button8.Location = new System.Drawing.Point(646, 43);
+            this.button8.Location = new System.Drawing.Point(742, 30);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(249, 35);
             this.button8.TabIndex = 119;
@@ -263,35 +265,45 @@ namespace SilverTune.CLIENT
             // 
             // txtCity
             // 
-            this.txtCity.Location = new System.Drawing.Point(325, 228);
+            this.txtCity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCity.Location = new System.Drawing.Point(367, 218);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(300, 32);
             this.txtCity.TabIndex = 118;
             // 
             // txtStreetNumber
             // 
-            this.txtStreetNumber.Location = new System.Drawing.Point(325, 183);
+            this.txtStreetNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtStreetNumber.Location = new System.Drawing.Point(367, 173);
             this.txtStreetNumber.Name = "txtStreetNumber";
             this.txtStreetNumber.Size = new System.Drawing.Size(300, 32);
             this.txtStreetNumber.TabIndex = 117;
             // 
             // txtStreetName
             // 
-            this.txtStreetName.Location = new System.Drawing.Point(325, 133);
+            this.txtStreetName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtStreetName.Location = new System.Drawing.Point(367, 123);
             this.txtStreetName.Name = "txtStreetName";
             this.txtStreetName.Size = new System.Drawing.Size(300, 32);
             this.txtStreetName.TabIndex = 116;
             // 
             // txtPhonno
             // 
-            this.txtPhonno.Location = new System.Drawing.Point(325, 91);
+            this.txtPhonno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPhonno.Location = new System.Drawing.Point(367, 81);
             this.txtPhonno.Name = "txtPhonno";
             this.txtPhonno.Size = new System.Drawing.Size(300, 32);
             this.txtPhonno.TabIndex = 115;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(325, 46);
+            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEmail.Location = new System.Drawing.Point(367, 36);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(300, 32);
             this.txtEmail.TabIndex = 114;
@@ -299,7 +311,7 @@ namespace SilverTune.CLIENT
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(163, 234);
+            this.label9.Location = new System.Drawing.Point(150, 224);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(50, 26);
             this.label9.TabIndex = 113;
@@ -308,7 +320,7 @@ namespace SilverTune.CLIENT
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(166, 186);
+            this.label10.Location = new System.Drawing.Point(153, 176);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(154, 26);
             this.label10.TabIndex = 112;
@@ -317,7 +329,7 @@ namespace SilverTune.CLIENT
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(166, 136);
+            this.label11.Location = new System.Drawing.Point(153, 126);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(135, 26);
             this.label11.TabIndex = 111;
@@ -326,7 +338,7 @@ namespace SilverTune.CLIENT
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(163, 91);
+            this.label12.Location = new System.Drawing.Point(150, 81);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(149, 26);
             this.label12.TabIndex = 110;
@@ -335,29 +347,20 @@ namespace SilverTune.CLIENT
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(163, 49);
+            this.label13.Location = new System.Drawing.Point(150, 39);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(68, 26);
             this.label13.TabIndex = 109;
             this.label13.Text = "Email";
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button3.Location = new System.Drawing.Point(325, 719);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(249, 35);
-            this.button3.TabIndex = 109;
-            this.button3.Text = "Update";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.dataGridView2);
             this.groupBox2.Controls.Add(this.textBox11);
             this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox2.Location = new System.Drawing.Point(64, 31);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1112, 319);
@@ -367,6 +370,8 @@ namespace SilverTune.CLIENT
             // 
             // dataGridView2
             // 
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -490,7 +495,10 @@ namespace SilverTune.CLIENT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1318, 780);
+            this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Name = "UpdateClient";
             this.Text = "UpdateClient";
@@ -510,9 +518,7 @@ namespace SilverTune.CLIENT
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button upImgBtn;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TextBox textBox11;

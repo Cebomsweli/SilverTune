@@ -40,15 +40,25 @@ namespace SilverTune.CLIENT
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
 
             // Set background and grid colors
-            dgv.BackgroundColor = Color.White;
+            // Set background and grid line colors
+            dgv.BackgroundColor = Color.FromArgb(64, 64, 64); // Entire grid background
             dgv.GridColor = Color.LightGray;
 
-            // Customize column headers
+            // Header style
             dgv.EnableHeadersVisualStyles = false;
-            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(54, 78, 114); // Deep blue
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(32, 32, 32); // Even darker for contrast
             dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
 
+            // Cell style
+            dgv.DefaultCellStyle.BackColor = Color.FromArgb(64, 64, 64);  // Cell background (ControlDarkDark)
+            dgv.DefaultCellStyle.ForeColor = Color.White;                 // White text
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(96, 96, 96); // Slightly lighter on selection
+            dgv.DefaultCellStyle.SelectionForeColor = Color.White;
+            dgv.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+
+            // Optional: Alternate row style (if needed)
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(70, 70, 70); // Slight variation for readability
             // Set default row style
             dgv.DefaultCellStyle.Font = new Font("Segoe UI", 10);
             dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(80, 120, 180);
@@ -117,40 +127,48 @@ namespace SilverTune.CLIENT
 
         private void upImgBtn_Click(object sender, EventArgs e)
         {
-            // Confirm archiving
-            DialogResult result = MessageBox.Show(
-                $"Are you sure you want to archive client '{ClientName}'?",
-                "Confirm Archive",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning
-            );
-
-            if (result == DialogResult.Yes)
+            if (ClientIDF==0)
             {
-                // Archive the artist (e.g., set status to "Archived")
-                cLIENTTableAdapter.ArchiveClient("Archived", ClientIDF,ClientIDF);
-
-                // Show success summary
-                string summary = $"Client '{ClientName}' has been successfully archived.\n" +
-                                 $"Archived Date: {DateTime.Now:d}";
-
-                MessageBox.Show(
-                    $"Archive Complete!\n\n{summary}",
-                    "Artist Archived",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                );
-                cLIENTTableAdapter.Fill(paseOneDS.CLIENT);
+                MessageBox.Show("Please Select the client before proceeding!");
             }
             else
             {
-                MessageBox.Show(
-                    "Archiving was cancelled.",
-                    "Cancelled",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
+                // Confirm archiving
+                DialogResult result = MessageBox.Show(
+                    $"Are you sure you want to archive client '{ClientName}'?",
+                    "Confirm Archive",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
                 );
+
+                if (result == DialogResult.Yes)
+                {
+                    // Archive the artist (e.g., set status to "Archived")
+                    cLIENTTableAdapter.ArchiveClient("Archived", ClientIDF, ClientIDF);
+
+                    // Show success summary
+                    string summary = $"Client '{ClientName}' has been successfully archived.\n" +
+                                     $"Archived Date: {DateTime.Now:d}";
+
+                    MessageBox.Show(
+                        $"Archive Complete!\n\n{summary}",
+                        "Artist Archived",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                    cLIENTTableAdapter.Fill(paseOneDS.CLIENT);
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "Archiving was cancelled.",
+                        "Cancelled",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                }
             }
+            
         }
     }
 }
