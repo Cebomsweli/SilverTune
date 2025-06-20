@@ -13,9 +13,10 @@ namespace SilverTune
         public bool ValidateEmail(string email)
         {
 
-            string pattern = @"^[a-zA-Z0-9_.+-]+@(?:[a-zA-Z0-9-]+\.)+(com|co\.za|ac\.za)$";
-            Regex regex = new Regex(pattern);
-            return regex.IsMatch(email);
+            // Accepts only gmail.com or gmail.ac.za addresses with proper formatting
+            string pattern = @"^[a-zA-Z0-9._%+-]+@gmail\.(com|ac\.za)$";
+            Regex regex = new Regex(pattern, RegexOptions.IgnoreCase);
+            return regex.IsMatch(email.Trim());
         }
 
         //Verify password
@@ -72,13 +73,16 @@ namespace SilverTune
 
             return true;
         }
+        public bool IsValidCountryName(string country)
+        {
+            string pattern = @"^[A-Za-z]+(?:[\s-][A-Za-z]+)*$";
+            return !string.IsNullOrWhiteSpace(country) && Regex.IsMatch(country.Trim(), pattern);
+        }
         public bool IsValidName(string name)
         {
             // Regular expression to match only letters (no symbols or numbers)
-            string pattern = @"^[a-zA-Z]+$";
-
-            // Check if the name matches the pattern
-            return Regex.IsMatch(name, pattern);
+            string pattern = @"^[A-Za-z]+(?:[\s-][A-Za-z]+)*$";
+            return !string.IsNullOrWhiteSpace(name) && Regex.IsMatch(name.Trim(), pattern);
         }
         public bool IsStrongPassword(string password)
         {

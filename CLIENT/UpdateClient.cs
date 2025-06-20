@@ -151,7 +151,7 @@ namespace SilverTune.CLIENT
 
             if (!errorHandler.ValidateEmail(txtEmail.Text))
             {
-                MessageBox.Show("Please enter an Email before updating.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a valid Email before updating.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -243,7 +243,7 @@ namespace SilverTune.CLIENT
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!errorHandler.IsValidName(txtStreetName.Text))
+            if (!errorHandler.IsValidCountryName(txtStreetName.Text))
             {
                 MessageBox.Show("Please enter a valid Street name before updating.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -335,7 +335,7 @@ namespace SilverTune.CLIENT
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (!errorHandler.IsValidName(txtCity.Text))
+            if (!errorHandler.IsValidCountryName(txtCity.Text))
             {
                 MessageBox.Show("Please enter an City before updating.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -382,7 +382,7 @@ namespace SilverTune.CLIENT
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if (!errorHandler.IsValidName(txtCountry.Text))
+            if (!errorHandler.IsValidCountryName(txtCountry.Text))
             {
                 MessageBox.Show("Please enter an City before updating.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

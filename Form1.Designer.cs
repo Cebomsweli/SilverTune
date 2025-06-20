@@ -43,6 +43,8 @@ namespace SilverTune
             this.rECORDARTISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rECORDDJCHARGESToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.uPDATEARTISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uPDATEFEESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uPDATEPERSONALINFOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aRCHIVEARTISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vIEWARTISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vIEWVERIFIEDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,8 +56,7 @@ namespace SilverTune
             this.vIEWEXISTINGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aRCHIVEBOOKINGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEPORTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uPDATEFEESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uPDATEPERSONALINFOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lOGOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,7 +82,8 @@ namespace SilverTune
             this.sTAFFToolStripMenuItem,
             this.aRTISTToolStripMenuItem,
             this.bOOKINGToolStripMenuItem,
-            this.rEPORTSToolStripMenuItem});
+            this.rEPORTSToolStripMenuItem,
+            this.lOGOUTToolStripMenuItem});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -190,6 +192,20 @@ namespace SilverTune
             this.uPDATEARTISTToolStripMenuItem.Text = "UPDATE ARTIST";
             this.uPDATEARTISTToolStripMenuItem.Click += new System.EventHandler(this.uPDATEARTISTToolStripMenuItem_Click);
             // 
+            // uPDATEFEESToolStripMenuItem
+            // 
+            this.uPDATEFEESToolStripMenuItem.Name = "uPDATEFEESToolStripMenuItem";
+            this.uPDATEFEESToolStripMenuItem.Size = new System.Drawing.Size(551, 58);
+            this.uPDATEFEESToolStripMenuItem.Text = "UPDATE FEES";
+            this.uPDATEFEESToolStripMenuItem.Click += new System.EventHandler(this.uPDATEFEESToolStripMenuItem_Click);
+            // 
+            // uPDATEPERSONALINFOToolStripMenuItem
+            // 
+            this.uPDATEPERSONALINFOToolStripMenuItem.Name = "uPDATEPERSONALINFOToolStripMenuItem";
+            this.uPDATEPERSONALINFOToolStripMenuItem.Size = new System.Drawing.Size(551, 58);
+            this.uPDATEPERSONALINFOToolStripMenuItem.Text = "UPDATE PERSONAL INFO";
+            this.uPDATEPERSONALINFOToolStripMenuItem.Click += new System.EventHandler(this.uPDATEPERSONALINFOToolStripMenuItem_Click);
+            // 
             // aRCHIVEARTISTToolStripMenuItem
             // 
             this.aRCHIVEARTISTToolStripMenuItem.Name = "aRCHIVEARTISTToolStripMenuItem";
@@ -276,23 +292,21 @@ namespace SilverTune
             // 
             this.rEPORTSToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 30F);
             this.rEPORTSToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.rEPORTSToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("rEPORTSToolStripMenuItem.Image")));
             this.rEPORTSToolStripMenuItem.Name = "rEPORTSToolStripMenuItem";
-            this.rEPORTSToolStripMenuItem.Size = new System.Drawing.Size(194, 58);
+            this.rEPORTSToolStripMenuItem.Size = new System.Drawing.Size(210, 58);
             this.rEPORTSToolStripMenuItem.Text = "REPORTS";
             this.rEPORTSToolStripMenuItem.Click += new System.EventHandler(this.rEPORTSToolStripMenuItem_Click);
             // 
-            // uPDATEFEESToolStripMenuItem
+            // lOGOUTToolStripMenuItem
             // 
-            this.uPDATEFEESToolStripMenuItem.Name = "uPDATEFEESToolStripMenuItem";
-            this.uPDATEFEESToolStripMenuItem.Size = new System.Drawing.Size(551, 58);
-            this.uPDATEFEESToolStripMenuItem.Text = "UPDATE FEES";
-            // 
-            // uPDATEPERSONALINFOToolStripMenuItem
-            // 
-            this.uPDATEPERSONALINFOToolStripMenuItem.Name = "uPDATEPERSONALINFOToolStripMenuItem";
-            this.uPDATEPERSONALINFOToolStripMenuItem.Size = new System.Drawing.Size(551, 58);
-            this.uPDATEPERSONALINFOToolStripMenuItem.Text = "UPDATE PERSONAL INFO";
-            this.uPDATEPERSONALINFOToolStripMenuItem.Click += new System.EventHandler(this.uPDATEPERSONALINFOToolStripMenuItem_Click);
+            this.lOGOUTToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 30F);
+            this.lOGOUTToolStripMenuItem.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lOGOUTToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("lOGOUTToolStripMenuItem.Image")));
+            this.lOGOUTToolStripMenuItem.Name = "lOGOUTToolStripMenuItem";
+            this.lOGOUTToolStripMenuItem.Size = new System.Drawing.Size(204, 58);
+            this.lOGOUTToolStripMenuItem.Text = "LOGOUT";
+            this.lOGOUTToolStripMenuItem.Click += new System.EventHandler(this.lOGOUTToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -340,6 +354,7 @@ namespace SilverTune
         private System.Windows.Forms.ToolStripMenuItem vIEWARCHIVEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uPDATEFEESToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uPDATEPERSONALINFOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lOGOUTToolStripMenuItem;
     }
 }
 

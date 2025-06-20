@@ -134,7 +134,7 @@ SELECT ArtistID, ArtistFirstName, ArtistLastName, ArtistStageName, ArtistEmail, 
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="PhaseOneDBConnection (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CountExistingArtist" Modifier="Public" Name="CountExistingArtist" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy12" UserSourceName="CountExistingArtist">
+              <DbSource ConnectionRef="PhaseOneDBConnection (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CountExistingArtist" Modifier="Public" Name="CountExistingArtist" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="CountExistingArtist">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        COUNT(*) AS MatchCount
@@ -147,7 +147,7 @@ WHERE        (ArtistStageName = @FirstName) AND (ArtistEmail = @Email);  </Comma
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="PhaseOneDBConnection (Settings)" DbObjectName="WstGrp3.dbo.ARTIST" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByArchived" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillByArchived" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByArchived">
+              <DbSource ConnectionRef="PhaseOneDBConnection (Settings)" DbObjectName="WstGrp3.dbo.ARTIST" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByArchived" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy11" GeneratorSourceName="FillByArchived" GetMethodModifier="Public" GetMethodName="GetDataBy11" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="FillByArchived">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ArtistID, ArtistFirstName, ArtistLastName, ArtistStageName, ArtistEmail, ArtistIdentityNo, ArtistPhoneNumber, ArtistGenre, ArtistStreetName, ArtistStreetNumber, ArtistCityName, ArtistCountryName, AristPostalCode, ArtistImage, 
@@ -294,7 +294,7 @@ WHERE        (ArtistID = @ClientID);
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="PhaseOneDBConnection (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateStreetNumber" Modifier="Public" Name="UpdateStreetNumber" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="UpdateStreetNumber">
+              <DbSource ConnectionRef="PhaseOneDBConnection (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateStreetNumber" Modifier="Public" Name="UpdateStreetNumber" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy12" UserSourceName="UpdateStreetNumber">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       ARTIST
@@ -366,7 +366,7 @@ SELECT FeeID, ArtistID, ClientType, RateAmountPerHour FROM ARTISTFEES WHERE (Fee
               <Mapping SourceColumn="RateAmountPerHour" DataSetColumn="RateAmountPerHour" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="PhaseOneDBConnection (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CountFeesForTheArtist" Modifier="Public" Name="CountFeesForTheArtist" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="CountFeesForTheArtist">
+              <DbSource ConnectionRef="PhaseOneDBConnection (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CountFeesForTheArtist" Modifier="Public" Name="CountFeesForTheArtist" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CountFeesForTheArtist">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        COUNT(*) AS Expr1
@@ -379,7 +379,7 @@ WHERE        (ArtistID = @ArtistID) AND (ClientType = @ClientType) AND (RateAmou
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="PhaseOneDBConnection (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CountIndividualFees" Modifier="Public" Name="CountIndividualFees" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="CountIndividualFees">
+              <DbSource ConnectionRef="PhaseOneDBConnection (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CountIndividualFees" Modifier="Public" Name="CountIndividualFees" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="CountIndividualFees">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        COUNT(*) AS Expr1
@@ -396,9 +396,10 @@ WHERE        (ArtistID = @ArtistID) </CommandText>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        COUNT(*) AS Expr1
 FROM            ARTISTFEES
-WHERE        (ArtistID = @ArtistID) AND (ClientType = 'Organisation') AND  (RateAmountPerHour &lt; '1')</CommandText>
+WHERE        (ArtistID = @ArtistID) AND (ClientType = @type)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="ArtistID" ColumnName="ArtistID" DataSourceName="WstGrp3.dbo.ARTISTFEES" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ArtistID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ArtistID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="type" ColumnName="ClientType" DataSourceName="WstGrp3.dbo.ARTISTFEES" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@type" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="ClientType" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -415,7 +416,44 @@ WHERE        (ArtistID = @id) AND (ClientType = 'Individual')</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="PhaseOneDBConnection (Settings)" DbObjectName="WstGrp3.dbo.ARTISTFEES" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getAmountFeeIndividual" Modifier="Public" Name="getAmountFeeIndividual" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="getAmountFeeIndividual">
+              <DbSource ConnectionRef="PhaseOneDBConnection (Settings)" DbObjectName="WstGrp3.dbo.ARTISTFEES" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByByRequired" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy8" GeneratorSourceName="FillByByRequired" GetMethodModifier="Public" GetMethodName="GetDataBy8" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="FillByByRequired">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ArtistID, ClientType, RateAmountPerHour
+FROM            ARTISTFEES
+WHERE        (ArtistID = @id) AND (ClientType = @art)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="ArtistID" DataSourceName="WstGrp3.dbo.ARTISTFEES" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ArtistID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="art" ColumnName="ClientType" DataSourceName="WstGrp3.dbo.ARTISTFEES" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@art" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="ClientType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="PhaseOneDBConnection (Settings)" DbObjectName="WstGrp3.dbo.ARTISTFEES" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy7" GeneratorSourceName="FillByID" GetMethodModifier="Public" GetMethodName="GetDataBy7" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="FillByID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        FeeID, ArtistID, ClientType, RateAmountPerHour
+FROM            ARTISTFEES
+WHERE        (ClientType IN ('Individual', 'Organisation')); 
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="PhaseOneDBConnection (Settings)" DbObjectName="WstGrp3.dbo.ARTISTFEES" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByNeed" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy9" GeneratorSourceName="FillByNeed" GetMethodModifier="Public" GetMethodName="GetDataBy9" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="FillByNeed">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ArtistID, ClientType, RateAmountPerHour
+FROM            ARTISTFEES
+WHERE        (ArtistID = @id) AND (ClientType = @art)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="ArtistID" DataSourceName="WstGrp3.dbo.ARTISTFEES" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ArtistID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="art" ColumnName="ClientType" DataSourceName="WstGrp3.dbo.ARTISTFEES" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@art" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="ClientType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="PhaseOneDBConnection (Settings)" DbObjectName="WstGrp3.dbo.ARTISTFEES" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getAmountFeeIndividual" Modifier="Public" Name="getAmountFeeIndividual" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="getAmountFeeIndividual">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        RateAmountPerHour
@@ -427,7 +465,7 @@ WHERE        (ArtistID = @id) AND (ClientType = 'Individual')</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="PhaseOneDBConnection (Settings)" DbObjectName="WstGrp3.dbo.ARTISTFEES" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getFee" Modifier="Public" Name="getFee" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="getFee">
+              <DbSource ConnectionRef="PhaseOneDBConnection (Settings)" DbObjectName="WstGrp3.dbo.ARTISTFEES" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getFee" Modifier="Public" Name="getFee" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="getFee">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        RateAmountPerHour
@@ -451,6 +489,21 @@ WHERE        (ArtistID = @id) AND (ClientType = 'Organisation')</CommandText>
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="PhaseOneDBConnection (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateFees" Modifier="Public" Name="UpdateFees" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy10" UserSourceName="UpdateFees">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE       ARTISTFEES
+SET                RateAmountPerHour = @newRate
+WHERE        (ArtistID = @id) AND (ClientType = @clientType); 
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="newRate" ColumnName="RateAmountPerHour" DataSourceName="WstGrp3.dbo.ARTISTFEES" DataTypeServer="decimal(10, 2)" DbType="Decimal" Direction="Input" ParameterName="@newRate" Precision="10" ProviderType="Decimal" Scale="2" Size="9" SourceColumn="RateAmountPerHour" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="ArtistID" DataSourceName="WstGrp3.dbo.ARTISTFEES" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ArtistID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="clientType" ColumnName="ClientType" DataSourceName="WstGrp3.dbo.ARTISTFEES" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@clientType" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="ClientType" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
               </DbSource>
             </Sources>
           </TableAdapter>
@@ -724,7 +777,7 @@ SELECT ArtistID, ArtistFirstName, ArtistLastName, ArtistStageName, ArtistEmail, 
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="PhaseOneDBConnection (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="countExistingClient" Modifier="Public" Name="countExistingClient" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy13" UserSourceName="countExistingClient">
+              <DbSource ConnectionRef="PhaseOneDBConnection (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="countExistingClient" Modifier="Public" Name="countExistingClient" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="countExistingClient">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        COUNT(*) AS MatchCount
@@ -748,7 +801,7 @@ WHERE        (ClientStatus = 'Archived')</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="PhaseOneDBConnection (Settings)" DbObjectName="WstGrp3.dbo.CLIENT" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByClientName" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillByClientName" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByClientName">
+              <DbSource ConnectionRef="PhaseOneDBConnection (Settings)" DbObjectName="WstGrp3.dbo.CLIENT" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByClientName" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy11" GeneratorSourceName="FillByClientName" GetMethodModifier="Public" GetMethodName="GetDataBy11" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="FillByClientName">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT ClientCityName, ClientCountryName, ClientEmail, ClientFirstName, ClientID, ClientLastName, ClientPhoneNumber, ClientPostalCode, ClientStatus, ClientStreetName, ClientStreetNumber FROM CLIENT WHERE (ClientStatus = 'Verified') AND (ClientFirstName LIKE @name + '%')</CommandText>
@@ -782,7 +835,7 @@ WHERE        (ClientID = @id)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="PhaseOneDBConnection (Settings)" DbObjectName="WstGrp3.dbo.CLIENT" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="SearchArchived" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy11" GeneratorSourceName="SearchArchived" GetMethodModifier="Public" GetMethodName="GetDataBy11" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="SearchArchived">
+              <DbSource ConnectionRef="PhaseOneDBConnection (Settings)" DbObjectName="WstGrp3.dbo.CLIENT" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="SearchArchived" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy111" GeneratorSourceName="SearchArchived" GetMethodModifier="Public" GetMethodName="GetDataBy111" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy111" UserSourceName="SearchArchived">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ClientID, ClientFirstName, ClientLastName, ClientPhoneNumber, ClientEmail, ClientStreetName, ClientStreetNumber, ClientCityName, ClientCountryName, ClientPostalCode, ClientStatus

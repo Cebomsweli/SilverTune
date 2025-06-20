@@ -36,6 +36,8 @@ namespace SilverTune.CLIENT
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            //MessageBox.Show("Country "+ clieCountTxt.Text);
             //Verifying textBoxes
             //Verify the the textboxes
             if (!errorHandler.IsValidName(clieNameTxt.Text))
@@ -72,14 +74,12 @@ namespace SilverTune.CLIENT
                 MessageBox.Show("Please Enter The Valid city name (e.g Durban)!");
             }
 
-            else if (clieCountTxt.Text == null || !errorHandler.IsValidName(clieCountTxt.Text))
+            else if (clieCountTxt.Text == null || !errorHandler.IsValidCountryName(clieCountTxt.Text))
             {
                 MessageBox.Show("Please Enter The Valid Country (e.g South Africa)!");
             }
 
-
-
-            else if (cliePostTxt.Text == null || !errorHandler.isNumber(cliePostTxt.Text))
+            else if (cliePostTxt.Text == null ||!errorHandler.isNumber(cliePostTxt.Text))
             {
                 MessageBox.Show("Please Enter The Valid postal code (e.g 4000)!");
             }

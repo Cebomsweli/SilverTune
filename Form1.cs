@@ -165,5 +165,18 @@ namespace SilverTune
             ARTIST.UpdateArtistV2 updateArtist = new ARTIST.UpdateArtistV2();
             FormSetup(updateArtist);
         }
+
+        private void uPDATEFEESToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ARTIST.UpdateFees updateFees = new ARTIST.UpdateFees();
+            FormSetup(updateFees);
+        }
+
+        private void lOGOUTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login log = new Login();
+            this.Hide();
+            log.Show();
+        }
     }
 }

@@ -84,7 +84,7 @@ namespace SilverTune.ARTIST
             ClientType = typeCombo.Text;
             //Verify if the charges arlready exists or not.
             int countIndividual = Convert.ToInt32(artistfeesTableAdapter.CountIndividualFees(ArtistID));
-            int countOrganisation = Convert.ToInt32(artistfeesTableAdapter.CountOrgFees(ArtistID));
+            int countOrganisation = Convert.ToInt32(artistfeesTableAdapter.CountOrgFees(ArtistID,ClientType));
 
             // Verify the the textboxes
             if (!errorHandler.IsValidName(artName.Text))
@@ -96,20 +96,18 @@ namespace SilverTune.ARTIST
                 MessageBox.Show("Please enter valid money/ digits!");
             }
             
-           
+            //else if (countOrganisation > 0 && ClientType == "Organisation")
+            //{
+            //    MessageBox.Show("Organisation fee for the artist is already recorded!");
+            //}
 
-            else if (countOrganisation > 0 && ClientType=="Organisation")
-            {
-                MessageBox.Show("Organisation fee for the artist is already recorded!");
-            }
-
-            else if (countIndividual > 0 && ClientType == "Individual")
-            {
-                MessageBox.Show("Individual fee for the artist is already recorded!");
-            }
+            //else if (countIndividual > 0 && ClientType == "Individual")
+            //{
+            //    MessageBox.Show("Individual fee for the artist is already recorded!");
+            //}
             
 
-            else if(errorHandler.IsValidName(artName.Text) && errorHandler.isMoney(artChargeHour.Text) && countIndividual == 0 && countOrganisation == 0)
+            else if(errorHandler.IsValidName(artName.Text) && errorHandler.isMoney(artChargeHour.Text) )
             {
                 ClientType = typeCombo.Text;
                 RateAmountPerHour = Convert.ToInt32(artChargeHour.Text);
